@@ -1,6 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/model/onboard_model/onboard_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
+
+import '../../../utils/utils_screen.dart';
+import '../../auth/login/login_screen.dart';
 
 class OnboardingOneScreen extends StatefulWidget {
   const OnboardingOneScreen({Key? key}) : super(key: key);
@@ -10,104 +14,202 @@ class OnboardingOneScreen extends StatefulWidget {
 }
 
 class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
-  int _iselectedIndex = 0;
+  int _selectedIndex = 0;
   List<OnboardModel> onb = [
     OnboardModel(
         image: "assets/images/lady.png",
         name: 'Welcome',
         title:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+            'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt.',
         section: 'Holding1'),
     OnboardModel(
         image: "assets/images/room.png",
         title:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+            'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt.',
         name: 'Find Producers',
         section: 'Holding2'),
     OnboardModel(
         image: "assets/images/menu.png",
         title:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+            'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt.',
         name: 'Collab',
         section: 'Holding3'),
   ];
+  PageController controller = PageController();
 
   @override
   Widget build(BuildContext context) {
-
+    double w = Utils.getWidth(context);
+    double h = Utils.getHeight(context);
     return Scaffold(
       backgroundColor: AppTheme.black,
-      body: Column(
+      body: Stack(
         children: [
           Expanded(
             child: PageView.builder(
-                onPageChanged: (_index) {
-                  setState(() {
-                    _iselectedIndex = _index;
-                  });
-                },
-                itemCount: onb.length,
-                itemBuilder: (context, index) {
-                  return Stack(
-                    children: [
-                      Image.asset(
-                        onb[index].image,
-                        height: MediaQuery.of(context).size.height,
-                        width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.cover,
+              controller: controller,
+              onPageChanged: (_index) {
+                setState(() {
+                  _selectedIndex = _index;
+                });
+              },
+              itemCount: onb.length,
+              itemBuilder: (context, index) {
+                return Stack(
+                  children: [
+                    Image.asset(
+                      onb[index].image,
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      fit: BoxFit.cover,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      decoration: BoxDecoration(
+                        color: AppTheme.black.withOpacity(0.4),
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height,
-                        decoration: BoxDecoration(
-                          color: AppTheme.black.withOpacity(0.4),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Spacer(),
+              Center(
+                child: Text(
+                  onb[_selectedIndex].section,
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: AppTheme.white,
+                    fontFamily: 'Avenir',
+                  ),
+                ),
+              ),
+              SizedBox(height: 116 * h),
+              Center(
+                child: Text(
+                  onb[_selectedIndex].name,
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.w400,
+                    color: AppTheme.white,
+                    fontFamily: 'Avenir',
+                  ),
+                ),
+              ),
+              SizedBox(height: 24),
+              Center(
+                child: Text(
+                  onb[_selectedIndex].title,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: AppTheme.white,
+                    fontFamily: 'Avenir',
+                  ),
+                ),
+              ),
+              SizedBox(height: 24),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    height: 8,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AnimatedContainer(
+                          height: 8,
+                          width: _selectedIndex == 0 ? 27 : 8,
+                          duration: Duration(milliseconds: 270),
+                          decoration: BoxDecoration(
+                            color: _selectedIndex == 0
+                                ? AppTheme.NeturalBlue
+                                : AppTheme.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        AnimatedContainer(
+                          height: 8,
+                          width: _selectedIndex == 1 ? 27 : 8,
+                          duration: Duration(milliseconds: 270),
+                          decoration: BoxDecoration(
+                            color: _selectedIndex == 1
+                                ? AppTheme.NeturalBlue
+                                : AppTheme.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        AnimatedContainer(
+                          height: 8,
+                          width: _selectedIndex == 2 ? 27 : 8,
+                          duration: Duration(milliseconds: 270),
+                          decoration: BoxDecoration(
+                            color: _selectedIndex == 2
+                                ? AppTheme.NeturalBlue
+                                : AppTheme.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _selectedIndex++;
+                      if (_selectedIndex == 3) {
+                        Navigator.pushReplacement(
+                          context,
+                          CupertinoPageRoute(
+                            builder: (context) {
+                              return const LoginScreen();
+                            },
+                          ),
+                        );
+                      } else {
+                        controller.jumpToPage(
+                          _selectedIndex,
+                        );
+                      }
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        top: 48,
+                        bottom: 32,
+                        left: 16,
+                      ),
+                      width: MediaQuery.of(context).size.width - 48,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: AppTheme.NeturalBlue,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Continue",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: "Manrope",
+                            fontWeight: FontWeight.w400,
+                            color: AppTheme.white,
+                          ),
                         ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Center(
-                            child: Text(
-                              onb[index].section,
-                              style: TextStyle(
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
-                                color: AppTheme.white,
-                                fontFamily: 'Avenir',
-                              ),
-                            ),
-                          ),
-                          Spacer(),
-                          Center(
-                            child: Text(
-                              onb[index].name,
-                              style: TextStyle(
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
-                                color: AppTheme.white,
-                                fontFamily: 'Avenir',
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 24),
-                          Center(
-                            child: Text(
-                              onb[index].title,
-                              style: TextStyle(
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
-                                color: AppTheme.white,
-                                fontFamily: 'Avenir',
-                              ),
-                            ),
-                          ),
-
-                        ],
-                      ),
-                    ],
-                  );
-                }),
+                    ),
+                  ),
+                ],
+              )
+            ],
           ),
         ],
       ),
