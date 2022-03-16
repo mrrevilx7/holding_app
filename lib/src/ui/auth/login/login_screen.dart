@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:holding_app/src/ui/auth/register/register_screen.dart';
 
 import '../../../utils/utils_screen.dart';
 import '../forgot_password/forgot_password_screen.dart';
@@ -25,16 +26,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
-
     if (_usernameCon.text.length > 2 && _passwordCon.text.length > 2) {
-        setState(() {
-          isNext = true;
-        });
-      } else {
-        setState(() {
-          isNext = false;
-        });
-      }
+      setState(() {
+        isNext = true;
+      });
+    } else {
+      setState(() {
+        isNext = false;
+      });
+    }
     _passwordCon.addListener(() {
       if (_usernameCon.text.length > 2 && _passwordCon.text.length > 2) {
         setState(() {
@@ -49,7 +49,6 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     double w = Utils.getWidth(context);
@@ -61,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 467 * h,
+            height: 495 * h,
             child: Image.asset(
               "assets/images/image_winter.png",
               width: MediaQuery.of(context).size.width,
@@ -242,33 +241,33 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        if(isNext ) {
+                        if (isNext) {
                           _sendApi(
                             _usernameCon.text,
                             _passwordCon.text,
                           );
-
                         }
-
-                            },
-
+                      },
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 270),
-                        margin: const EdgeInsets.only(top: 32, left: 16, right: 16),
+                        margin:
+                            const EdgeInsets.only(top: 32, left: 16, right: 16),
                         width: MediaQuery.of(context).size.width,
                         height: 56,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6),
-                          color: isNext ? AppTheme.neturalBlue : AppTheme.lightgray,
+                          color: isNext
+                              ? AppTheme.neturalBlue
+                              : AppTheme.lightgray,
                         ),
                         child: Center(
                           child: isLoading
                               ? const CircularProgressIndicator(
                                   color: AppTheme.white,
                                 )
-                              :  const Text(
+                              : const Text(
                                   "Tizimga kirish",
-                                  style:  TextStyle(
+                                  style: TextStyle(
                                     fontFamily: 'Avenir',
                                     fontWeight: FontWeight.w500,
                                     color: AppTheme.white,
@@ -280,39 +279,50 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 16),
                     Container(
-                      margin: EdgeInsets.only(bottom: Platform.isIOS ?32:24),
-                      child: RichText(
-                        text: const TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: "Hisobingiz yo'qmi?  ",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontFamily: '',
-                                color: AppTheme.gray,
-                                fontSize: 14,
-                              ),
+                      margin: EdgeInsets.only(bottom: Platform.isIOS ? 32 : 24),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const RegisterScreen();
+                              },
                             ),
-                            TextSpan(
-                              text: "Ro'yxatdan o'tish",
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                decorationColor: AppTheme.neturalBlue,
-                                decorationThickness: 1.75,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Avenir',
-                                color: AppTheme.neturalBlue,
-                                fontSize: 14,
+                          );
+                        },
+                        child: RichText(
+                          text: const TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: "Hisobingiz yo'qmi?  ",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: '',
+                                  color: AppTheme.gray,
+                                  fontSize: 14,
+                                ),
                               ),
-                            )
-                          ],
+                              TextSpan(
+                                text: "Ro'yxatdan o'tish",
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: AppTheme.neturalBlue,
+                                  decorationThickness: 1.75,
+                                  fontWeight: FontWeight.w700,
+                                  fontFamily: 'Avenir',
+                                  color: AppTheme.neturalBlue,
+                                  fontSize: 14,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-
             ],
           ),
         ],
@@ -321,7 +331,4 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-Future<void> _sendApi (String username, String password) async {
-
-
-}
+Future<void> _sendApi(String username, String password) async {}
