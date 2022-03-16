@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../utils/utils_screen.dart';
 
@@ -14,6 +15,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController _usernameCon = TextEditingController();
   TextEditingController _passwordCon = TextEditingController();
+  bool _showEye = false;
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +50,8 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 98 * h,
               ),
-              Center(
-                child: Text(
+              const Center(
+                child: const Text(
                   "HHH",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -59,8 +61,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
-              Text(
+              const SizedBox(height: 16),
+              const Text(
                 "Holding",
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
@@ -75,10 +77,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 width: 375 * w,
                 height: 467 * h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                decoration: const BoxDecoration(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(32),
-                    topLeft: Radius.circular(32),
+                    topLeft: const Radius.circular(32),
                   ),
                   color: AppTheme.white,
                 ),
@@ -90,8 +92,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         right: 24 * w,
                         top: 40 * h,
                       ),
-                      child: Center(
-                          child: Text(
+                      child: const Center(
+                          child: const Text(
                         "Eng yaxshi hamkorlik",
                         style: TextStyle(
                           fontSize: 30,
@@ -112,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 52,
                       child: TextField(
                         controller: _usernameCon,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             labelText: "Username",
                             labelStyle: TextStyle(
                               color: AppTheme.gray,
@@ -121,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               fontSize: 18,
                               // letterSpacing: 0.17
                             )),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'Avenir',
@@ -131,26 +133,36 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                         left: 24,
                         top: 32,
                         right: 24,
                       ),
-                      width: double.infinity,
                       height: 52,
                       child: TextField(
                         controller: _passwordCon,
                         decoration: InputDecoration(
-                            labelText: "Password",
-                            labelStyle: TextStyle(
-                              color: AppTheme.gray,
-                              fontFamily: 'Avenir',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18,
-                              // letterSpacing: 0.17
-                            ),
+                          suffixIcon: GestureDetector(
+                            child: _showEye
+                                ? const Icon(Icons.visibility_outlined)
+                                : const Icon(Icons.visibility_off_outlined),
+                            onTap: () {
+                              setState(() {
+                                _showEye = !_showEye;
+                              });
+                            },
+                          ),
+                          labelText: "Password",
+                          labelStyle: const TextStyle(
+                            color: AppTheme.gray,
+                            fontFamily: 'Avenir',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                            // letterSpacing: 0.17
+                          ),
                         ),
-                        style: TextStyle(
+                        obscureText: _showEye,
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
                           fontFamily: 'Avenir',
