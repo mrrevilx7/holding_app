@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/model/onboard_model/onboard_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
@@ -21,19 +22,29 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
         name: 'Welcome',
         title:
             'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt.',
-        section: 'Holding1'),
+        section: 'Holding1',
+        skip: 'Skip',
+        arrowRight: ' ',
+        isSelect: false),
     OnboardModel(
         image: "assets/images/room.png",
         title:
             'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt.',
         name: 'Find Producers',
-        section: 'Holding2'),
+        section: 'Holding2',
+        arrowRight: 'assets/icons/arrow_left.svg',
+        skip: 'Skip',
+        isSelect: true),
     OnboardModel(
-        image: "assets/images/menu.png",
-        title:
-            'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt.',
-        name: 'Collab',
-        section: 'Holding3'),
+      image: "assets/images/menu.png",
+      title:
+          'Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor\nincididunt.',
+      name: 'Collab',
+      section: 'Holding3',
+      skip: 'Skip',
+      arrowRight: 'assets/icons/arrow_left.svg',
+      isSelect: true,
+    ),
   ];
   PageController controller = PageController();
 
@@ -45,39 +56,101 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
       backgroundColor: AppTheme.black,
       body: Stack(
         children: [
-          Expanded(
-            child: PageView.builder(
-              controller: controller,
-              onPageChanged: (_index) {
-                setState(() {
-                  _selectedIndex = _index;
-                });
-              },
-              itemCount: onb.length,
-              itemBuilder: (context, index) {
-                return Stack(
-                  children: [
-                    Image.asset(
-                      onb[index].image,
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width,
-                      fit: BoxFit.cover,
+          PageView.builder(
+            controller: controller,
+            onPageChanged: (_index) {
+              setState(() {
+                _selectedIndex = _index;
+              });
+            },
+            itemCount: onb.length,
+            itemBuilder: (context, index) {
+              return Stack(
+                children: [
+                  Image.asset(
+                    onb[index].image,
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.cover,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    decoration: BoxDecoration(
+                      color: AppTheme.black.withOpacity(0.4),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        color: AppTheme.black.withOpacity(0.4),
-                      ),
-                    ),
-                  ],
-                );
-              },
-            ),
+                  ),
+                ],
+              );
+            },
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(height: 76 * h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+
+                  onb[_selectedIndex].isSelect == true
+                      ? GestureDetector(
+                        onTap: () {
+                          _selectedIndex--;
+                          controller.jumpToPage(
+                            _selectedIndex,
+                          );
+
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(left: 16),
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                          ),
+                          child: Center(
+                            child: SvgPicture.asset(
+                              onb[_selectedIndex].arrowRight,
+                              width: 24,
+                              height: 24,
+                            ),
+                          ),
+                        ),
+                      )
+                      : Container(
+                          margin: EdgeInsets.only(left: 16),
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                          ),
+                        ),
+                  Spacer(),
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return LoginScreen();
+                          },
+                        ),
+                      );
+                    },
+                    child: Text(
+                      onb[_selectedIndex].skip,
+                      style: TextStyle(
+                        fontFamily: 'Avenir',
+                        fontWeight: FontWeight.w400,
+                        color: AppTheme.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                ],
+              ),
               Spacer(),
               Center(
                 child: Text(
@@ -133,7 +206,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                           duration: Duration(milliseconds: 270),
                           decoration: BoxDecoration(
                             color: _selectedIndex == 0
-                                ? AppTheme.NeturalBlue
+                                ? AppTheme.neturalBlue
                                 : AppTheme.white,
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -145,7 +218,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                           duration: Duration(milliseconds: 270),
                           decoration: BoxDecoration(
                             color: _selectedIndex == 1
-                                ? AppTheme.NeturalBlue
+                                ? AppTheme.neturalBlue
                                 : AppTheme.white,
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -157,7 +230,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                           duration: Duration(milliseconds: 270),
                           decoration: BoxDecoration(
                             color: _selectedIndex == 2
-                                ? AppTheme.NeturalBlue
+                                ? AppTheme.neturalBlue
                                 : AppTheme.white,
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -192,7 +265,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                       width: MediaQuery.of(context).size.width - 48,
                       height: 50,
                       decoration: BoxDecoration(
-                        color: AppTheme.NeturalBlue,
+                        color: AppTheme.neturalBlue,
                       ),
                       child: Center(
                         child: Text(
