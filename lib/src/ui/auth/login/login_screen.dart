@@ -1,9 +1,13 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../utils/utils_screen.dart';
+import '../forgot_password/forgot_password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,9 +17,38 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _usernameCon = TextEditingController();
-  TextEditingController _passwordCon = TextEditingController();
+  final TextEditingController _usernameCon = TextEditingController();
+  final TextEditingController _passwordCon = TextEditingController();
   bool _showEye = false;
+  bool isNext = false;
+  bool isLoading = false;
+
+  @override
+  void initState() {
+
+    if (_usernameCon.text.length > 2 && _passwordCon.text.length > 2) {
+        setState(() {
+          isNext = true;
+        });
+      } else {
+        setState(() {
+          isNext = false;
+        });
+      }
+    _passwordCon.addListener(() {
+      if (_usernameCon.text.length > 2 && _passwordCon.text.length > 2) {
+        setState(() {
+          isNext = true;
+        });
+      } else {
+        setState(() {
+          isNext = false;
+        });
+      }
+    });
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +59,9 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: AppTheme.black,
       body: Stack(
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 495 * h,
+            height: 467 * h,
             child: Image.asset(
               "assets/images/image_winter.png",
               width: MediaQuery.of(context).size.width,
@@ -51,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 98 * h,
               ),
               const Center(
-                child: const Text(
+                child: Text(
                   "HHH",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -78,9 +111,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 375 * w,
                 height: 467 * h,
                 decoration: const BoxDecoration(
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topRight: Radius.circular(32),
-                    topLeft: const Radius.circular(32),
+                    topLeft: Radius.circular(32),
                   ),
                   color: AppTheme.white,
                 ),
@@ -90,10 +123,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       margin: EdgeInsets.only(
                         left: 24 * w,
                         right: 24 * w,
-                        top: 40 * h,
+                        top: 32 * h,
                       ),
                       child: const Center(
-                          child: const Text(
+                          child: Text(
                         "Eng yaxshi hamkorlik",
                         style: TextStyle(
                           fontSize: 30,
@@ -104,10 +137,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       )),
                     ),
+                    Spacer(),
                     Container(
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                         left: 24,
-                        top: 68 * h,
                         right: 24,
                       ),
                       width: double.infinity,
@@ -171,13 +204,124 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 12),
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                  builder: (context) {
+                                    return const ForgotPasswordScreen();
+                                  },
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              "Forgot password?",
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                decorationColor: AppTheme.neturalBlue,
+                                decorationThickness: 1.75,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: AppTheme.neturalBlue,
+                                fontFamily: 'Avenir',
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        if(isNext ) {
+                          _sendApi(
+                            _usernameCon.text,
+                            _passwordCon.text,
+                          );
+
+                        }
+
+                            },
+
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 270),
+                        margin: const EdgeInsets.only(top: 32, left: 16, right: 16),
+                        width: MediaQuery.of(context).size.width,
+                        height: 56,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: isNext ? AppTheme.neturalBlue : AppTheme.lightgray,
+                        ),
+                        child: Center(
+                          child: isLoading
+                              ? const CircularProgressIndicator(
+                                  color: AppTheme.white,
+                                )
+                              :  const Text(
+                                  "Tizimga kirish",
+                                  style:  TextStyle(
+                                    fontFamily: 'Avenir',
+                                    fontWeight: FontWeight.w500,
+                                    color: AppTheme.white,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Container(
+                      margin: EdgeInsets.only(bottom: Platform.isIOS ?32:24),
+                      child: RichText(
+                        text: const TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: "Hisobingiz yo'qmi?  ",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontFamily: '',
+                                color: AppTheme.gray,
+                                fontSize: 14,
+                              ),
+                            ),
+                            TextSpan(
+                              text: "Ro'yxatdan o'tish",
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                decorationColor: AppTheme.neturalBlue,
+                                decorationThickness: 1.75,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: 'Avenir',
+                                color: AppTheme.neturalBlue,
+                                fontSize: 14,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
+
             ],
           ),
         ],
       ),
     );
   }
+}
+
+Future<void> _sendApi (String username, String password) async {
+
+
 }
