@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:holding_app/src/model/information_model/information_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 
 import '../../../utils/utils_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../../../widgets/grid_widget/grid_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -13,15 +15,52 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final int _inforCount = 2;
+
+  List<InformationModel> data = [
+    InformationModel(
+      name: "Camila",
+      image: "assets/images/dress1.png",
+      deressName: "Paris",
+      price: 10000,
+    ),
+    InformationModel(
+      name: "Camila",
+      image: "assets/images/dress1.png",
+      deressName: "Paris",
+      price: 10000,
+    ),
+    InformationModel(
+      name: "Camila",
+      image: "assets/images/dress1.png",
+      deressName: "Paris",
+      price: 10000,
+    ),
+    InformationModel(
+      name: "Camila",
+      image: "assets/images/dress1.png",
+      deressName: "Paris",
+      price: 10000,
+    ),
+    InformationModel(
+      name: "Camila",
+      image: "assets/images/dress1.png",
+      deressName: "Paris",
+      price: 10000,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     double w = Utils.getWidth(context);
     double h = Utils.getHeight(context);
     return Scaffold(
-      body: Column(
+      backgroundColor: AppTheme.white,
+      body: ListView(
+        padding: EdgeInsets.zero,
         children: [
           Container(
-            margin: EdgeInsets.only(top: 70 * h),
+            margin: EdgeInsets.only(top: 40 * h),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -124,7 +163,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       left: 36 * w,
                     ),
                     width: 235 * w,
-                    height: 62 * h,
+                    height: 62,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(10),
@@ -157,7 +196,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Container(
                 margin: EdgeInsets.only(right: 36 * w),
                 width: 121 * w,
-                height: 62 * h,
+                height: 62,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(10),
@@ -187,7 +226,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
-          SizedBox(height: 8 * h),
+          SizedBox(height: 16 * h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -199,12 +238,159 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Roboto',
                   color: AppTheme.magenta,
-
                 ),
               ),
             ],
           ),
-
+          SizedBox(height: 16 * h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                  left: 36 * w,
+                ),
+                width: 162 * w,
+                height: 120,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: AppTheme.levender,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 12 * h),
+                    Text(
+                      "Ko’ylak soni",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        color: AppTheme.magentaDark,
+                      ),
+                    ),
+                    SizedBox(height: 12 * h),
+                    Text(
+                      "3",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: AppTheme.magentaDark,
+                      ),
+                    ),
+                    SizedBox(height: 12 * h),
+                    Text(
+                      "dona",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: AppTheme.magentaDark,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 24),
+              Container(
+                margin: EdgeInsets.only(
+                  right: 36,
+                ),
+                width: 162 * w,
+                height: 120,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: AppTheme.levenderRed,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 12 * h),
+                    Text(
+                      "Xarajatlar",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        color: AppTheme.lightRed,
+                      ),
+                    ),
+                    SizedBox(height: 12 * h),
+                    Text(
+                      "164",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: AppTheme.lightRed,
+                      ),
+                    ),
+                    SizedBox(height: 12 * h),
+                    Text(
+                      "\$",
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: AppTheme.lightRed,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16 * h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(width: 28 * w),
+              Text(
+                "Maxsulotlar haqida:",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Roboto',
+                  color: AppTheme.magenta,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16 * h),
+          ListView.builder(
+            itemCount: (data.length + _inforCount - 1) ~/ _inforCount,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(width: 36),
+                      Expanded(
+                        child: InforGridWidget(
+                          data: data[index * _inforCount],
+                          onTap: () {},
+                        ),
+                      ),
+                      SizedBox(width: 24),
+                      Expanded(
+                        child: index * _inforCount + 1 >= data.length
+                            ? Container()
+                            : InforGridWidget(
+                                data: data[index * _inforCount + 1],
+                                onTap: () {},
+                              ),
+                      ),
+                      SizedBox(width: 36),
+                    ],
+                  ),
+                  SizedBox(height: 16),
+                ],
+              );
+            },
+          ),
         ],
       ),
     );
