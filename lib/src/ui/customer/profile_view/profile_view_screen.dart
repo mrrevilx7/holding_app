@@ -359,7 +359,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(width: 28 * w),
-              Text(
+              const Text(
                 "Maxsulotlar haqida:",
                 style: TextStyle(
                   fontSize: 24,
