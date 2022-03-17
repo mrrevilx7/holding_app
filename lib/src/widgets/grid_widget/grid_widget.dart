@@ -21,9 +21,10 @@ class InforGridWidget extends StatelessWidget {
       height: 128,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: AppTheme.black,
+        color: AppTheme.levender,
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(width: 12),
           Column(
@@ -33,22 +34,37 @@ class InforGridWidget extends StatelessWidget {
               Text(
                 data.deressName,
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 15,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'Poppins',
                   color: AppTheme.magenta,
                 ),
               ),
-              Text(
-                data.name,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: 'Poppins',
-                  color: AppTheme.magenta,
-                ),
-              ),
+              // Text(
+              //   data.name,
+              //   style: TextStyle(
+              //     fontSize: 15,
+              //     fontWeight: FontWeight.w600,
+              //     fontFamily: 'Poppins',
+              //     color: AppTheme.magenta,
+              //   ),
+              // ),
             ],
+          ),
+          Spacer(),
+          Expanded(
+            child: Container(
+              width: 56 * w,
+              height: 56 * w,
+              margin: const EdgeInsets.only(right: 4, top: 4, ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(56),
+                color: Colors.transparent,
+              ),
+              child: Image.asset(
+                data.image,
+              ),
+            ),
           ),
         ],
       ),
