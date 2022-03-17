@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:holding_app/src/ui/auth/register/register_screen.dart';
 
 import '../../../utils/utils_screen.dart';

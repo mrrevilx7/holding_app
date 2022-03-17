@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:holding_app/src/model/information_model/information_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
+import 'package:holding_app/src/ui/customer/news_screen/news_screen.dart';
 
 import '../../../utils/utils_screen.dart';
 import '../../../widgets/grid_widget/grid_widget.dart';
@@ -22,31 +23,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
       name: "Camila",
       image: "assets/images/dress1.png",
       deressName: "Paris",
-      price: 10000,
+      price: 10.000,
+    ),
+    InformationModel(
+      name: "Camila",
+      image: "assets/images/dress2.png",
+      deressName: "Paris",
+      price: 10.000,
     ),
     InformationModel(
       name: "Camila",
       image: "assets/images/dress1.png",
       deressName: "Paris",
-      price: 10000,
+      price: 10.000,
+    ),
+    InformationModel(
+      name: "Camila",
+      image: "assets/images/dress2.png",
+      deressName: "Paris",
+      price: 10.000,
     ),
     InformationModel(
       name: "Camila",
       image: "assets/images/dress1.png",
       deressName: "Paris",
-      price: 10000,
-    ),
-    InformationModel(
-      name: "Camila",
-      image: "assets/images/dress1.png",
-      deressName: "Paris",
-      price: 10000,
-    ),
-    InformationModel(
-      name: "Camila",
-      image: "assets/images/dress1.png",
-      deressName: "Paris",
-      price: 10000,
+      price: 10.000,
     ),
   ];
 
@@ -193,40 +194,52 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(right: 36 * w),
-                width: 121 * w,
-                height: 62,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
-                  ),
-                  color: AppTheme.neturalBlue,
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppTheme.black.withOpacity(0.3),
-                      spreadRadius: 0,
-                      blurRadius: 4,
-                      offset: Offset(0, 1), // changes position of shadow
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const NewsScreen();
+                      },
                     ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    "NEWS",
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w700,
-                      color: AppTheme.white,
-                      fontSize: 30,
+                  );
+                },
+                child: Container(
+                  margin: EdgeInsets.only(right: 36 * w),
+                  width: 121 * w,
+                  height: 62,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                    color: AppTheme.neturalBlue,
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppTheme.black.withOpacity(0.3),
+                        spreadRadius: 0,
+                        blurRadius: 4,
+                        offset: Offset(0, 1), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      "NEWS",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w700,
+                        color: AppTheme.white,
+                        fontSize: 30,
+                      ),
                     ),
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16 * h),
+          SizedBox(height: 24 * h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -242,13 +255,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
-          SizedBox(height: 16 * h),
+          SizedBox(height: 24 * h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 margin: EdgeInsets.only(
-                  left: 36 * w,
+                  left: 36 ,
                 ),
                 width: 162 * w,
                 height: 120,
@@ -259,33 +272,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 12 * h),
+                    SizedBox(height: 18 * h),
                     Text(
                       "Ko’ylak soni",
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w400,
-                        fontSize: 16,
+                        fontSize: 18,
                         color: AppTheme.magentaDark,
                       ),
                     ),
-                    SizedBox(height: 12 * h),
+                    SizedBox(height: 18 * h),
                     Text(
                       "3",
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w600,
-                        fontSize: 16,
+                        fontSize: 18,
                         color: AppTheme.magentaDark,
                       ),
                     ),
-                    SizedBox(height: 12 * h),
+                    SizedBox(height: 18 * h),
                     Text(
                       "dona",
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w600,
-                        fontSize: 16,
+                        fontSize: 18,
                         color: AppTheme.magentaDark,
                       ),
                     ),
@@ -306,33 +319,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 12 * h),
+                    SizedBox(height: 18 * h),
                     Text(
                       "Xarajatlar",
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w400,
-                        fontSize: 16,
+                        fontSize: 18,
                         color: AppTheme.lightRed,
                       ),
                     ),
-                    SizedBox(height: 12 * h),
+                    SizedBox(height: 18 * h),
                     Text(
                       "164",
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w600,
-                        fontSize: 16,
+                        fontSize: 18,
                         color: AppTheme.lightRed,
                       ),
                     ),
-                    SizedBox(height: 12 * h),
+                    SizedBox(height: 18 * h),
                     Text(
                       "\$",
                       style: TextStyle(
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w600,
-                        fontSize: 16,
+                        fontSize: 18,
                         color: AppTheme.lightRed,
                       ),
                     ),
@@ -341,7 +354,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
-          SizedBox(height: 16 * h),
+          SizedBox(height: 24 * h),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -357,39 +370,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
-          SizedBox(height: 16 * h),
-          ListView.builder(
-            itemCount: (data.length + _inforCount - 1) ~/ _inforCount,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return Column(
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 36),
-                      Expanded(
-                        child: InforGridWidget(
-                          data: data[index * _inforCount],
-                          onTap: () {},
+          SizedBox(
+            height: 272,
+            child: ListView.builder(
+              itemCount: (data.length + _inforCount - 1) ~/ _inforCount,
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Row(
+                      children: [
+                        const SizedBox(width: 36),
+                        Expanded(
+                          child: InforGridWidget(
+                            data: data[index * _inforCount],
+                            onTap: () {},
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 24),
-                      Expanded(
-                        child: index * _inforCount + 1 >= data.length
-                            ? Container()
-                            : InforGridWidget(
-                                data: data[index * _inforCount + 1],
-                                onTap: () {},
-                              ),
-                      ),
-                      SizedBox(width: 36),
-                    ],
-                  ),
-                  SizedBox(height: 16),
-                ],
-              );
-            },
+                        const SizedBox(width: 24),
+                        Expanded(
+                          child: index * _inforCount + 1 >= data.length
+                              ? Container()
+                              : InforGridWidget(
+                                  data: data[index * _inforCount + 1],
+                                  onTap: () {},
+                                ),
+                        ),
+                        const SizedBox(width: 36),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),
