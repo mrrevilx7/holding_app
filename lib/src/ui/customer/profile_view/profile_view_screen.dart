@@ -293,7 +293,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     SizedBox(height: 18 * h),
-                    Text(
+                    const Text(
                       "dona",
                       style: TextStyle(
                         fontFamily: 'Roboto',
