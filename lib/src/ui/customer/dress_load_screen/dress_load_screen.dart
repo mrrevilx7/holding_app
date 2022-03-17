@@ -24,7 +24,7 @@ class _DressLoadScreenState extends State<DressLoadScreen> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 color: Colors.transparent,
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage(
                     'assets/images/dress_lady.jpg',
                   ),
