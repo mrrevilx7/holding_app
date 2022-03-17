@@ -107,8 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 margin: EdgeInsets.only(
                   top: 120 * h,
                 ),
-                width: 375 * w,
-                height: 467 * h,
+                width: MediaQuery.of(context).size.width,
+                height: 578 * h,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(32),

@@ -102,10 +102,10 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
 
                         },
                         child: Container(
-                          margin: EdgeInsets.only(left: 16),
+                          margin: const EdgeInsets.only(left: 16),
                           width: 24,
                           height: 24,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.transparent,
                           ),
                           child: Center(
@@ -118,14 +118,14 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                         ),
                       )
                       : Container(
-                          margin: EdgeInsets.only(left: 16),
+                          margin: const EdgeInsets.only(left: 16),
                           width: 24,
                           height: 24,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.transparent,
                           ),
                         ),
-                  Spacer(),
+                  const Spacer(),
 
                   GestureDetector(
                     onTap: () {
@@ -133,14 +133,14 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return LoginScreen();
+                            return const LoginScreen();
                           },
                         ),
                       );
                     },
                     child: Text(
                       onb[_selectedIndex].skip,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'Avenir',
                         fontWeight: FontWeight.w400,
                         color: AppTheme.white,
@@ -148,14 +148,14 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               Center(
                 child: Text(
                   onb[_selectedIndex].section,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
                     color: AppTheme.white,
@@ -167,7 +167,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
               Center(
                 child: Text(
                   onb[_selectedIndex].name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.w400,
                     color: AppTheme.white,
@@ -175,13 +175,13 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Center(
                 child: Text(
                   onb[_selectedIndex].title,
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                     color: AppTheme.white,
@@ -189,7 +189,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -203,7 +203,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                         AnimatedContainer(
                           height: 8,
                           width: _selectedIndex == 0 ? 27 : 8,
-                          duration: Duration(milliseconds: 270),
+                          duration: const Duration(milliseconds: 270),
                           decoration: BoxDecoration(
                             color: _selectedIndex == 0
                                 ? AppTheme.neturalBlue
@@ -215,7 +215,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                         AnimatedContainer(
                           height: 8,
                           width: _selectedIndex == 1 ? 27 : 8,
-                          duration: Duration(milliseconds: 270),
+                          duration: const Duration(milliseconds: 270),
                           decoration: BoxDecoration(
                             color: _selectedIndex == 1
                                 ? AppTheme.neturalBlue
@@ -227,7 +227,7 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                         AnimatedContainer(
                           height: 8,
                           width: _selectedIndex == 2 ? 27 : 8,
-                          duration: Duration(milliseconds: 270),
+                          duration: const Duration(milliseconds: 270),
                           decoration: BoxDecoration(
                             color: _selectedIndex == 2
                                 ? AppTheme.neturalBlue
@@ -257,17 +257,17 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                       }
                     },
                     child: Container(
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                         top: 48,
                         bottom: 32,
                         left: 16,
                       ),
                       width: MediaQuery.of(context).size.width - 48,
                       height: 50,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppTheme.neturalBlue,
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Continue",
                           style: TextStyle(

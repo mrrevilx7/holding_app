@@ -31,7 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   void initState() {
     if (_usernameCon.text.length > 2 &&
         _passwordCon.text.length > 2 &&
-        _phoneCon.text.length > 2) {
+        _phoneCon.text.length == 9) {
       setState(() {
         isNext = true;
       });
@@ -44,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _phoneCon.addListener(() {
       if (_usernameCon.text.length > 2 &&
           _passwordCon.text.length > 2 &&
-          _phoneCon.text.length > 2) {
+          _phoneCon.text.length  == 9) {
         setState(() {
           isNext = true;
         });
@@ -129,8 +129,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 margin: EdgeInsets.only(
                   top: 48 * h,
                 ),
-                width: 375 * w,
-                height: 514 * h,
+                width: MediaQuery.of(context).size.width,
+                height: 698 * h,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(32),
@@ -177,7 +177,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       margin: const EdgeInsets.only(
                         left: 24,
                         right: 24,
-                        top: 12,
+                        top: 8,
                       ),
                       height: 52,
                       child: TextField(
@@ -214,7 +214,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: const InputDecoration(
                             labelText: "Phone",
                             prefix: Text(
-                              '+998',
+                              "+998 ",
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
@@ -387,37 +387,45 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 )
 
                         ),
-                        SizedBox(width: 10),
-                        RichText(
-                          text:  TextSpan(
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: "Shartlarga roziman",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Avenir',
-                                  color: AppTheme.black.withOpacity(0.6),
-                                  fontSize: 14,
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RichText(
+                                text:  TextSpan(
+                                  children: <TextSpan>[
+                                    TextSpan(
+                                      text: "Shartlarga roziman",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Avenir',
+                                        color: AppTheme.black.withOpacity(0.6),
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                      const TextSpan(
+                                      text: " Xizmat ko'rsatish shartlari\nva ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Avenir',
+                                        color: AppTheme.black,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    const TextSpan(
+                                      text: "Maxfiylik siyosati ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: 'Avenir',
+                                        color: AppTheme.black,
+                                        fontSize: 14,
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
-                               TextSpan(
-                                text: " Xizmat ko'rsatish shartlari\nva ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Avenir',
-                                  color: AppTheme.black,
-                                  fontSize: 14,
-                                ),
-                              ),
-                              TextSpan(
-                                text: "Maxfiylik siyosati ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Avenir',
-                                  color: AppTheme.black,
-                                  fontSize: 14,
-                                ),
-                              )
                             ],
                           ),
                         ),
