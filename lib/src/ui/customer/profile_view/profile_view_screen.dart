@@ -180,7 +180,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ],
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Holding1",
                         style: TextStyle(
@@ -224,7 +224,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ],
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "NEWS",
                       style: TextStyle(
@@ -244,7 +244,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(width: 28 * w),
-              Text(
+              const Text(
                 "Barcha ma’lumotlar:",
                 style: TextStyle(
                   fontSize: 24,
@@ -260,7 +260,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   left: 36 ,
                 ),
                 width: 162 * w,
@@ -273,7 +273,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 18 * h),
-                    Text(
+                    const Text(
                       "Ko’ylak soni",
                       style: TextStyle(
                         fontFamily: 'Roboto',
@@ -283,7 +283,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     SizedBox(height: 18 * h),
-                    Text(
+                    const Text(
                       "3",
                       style: TextStyle(
                         fontFamily: 'Roboto',
