@@ -370,42 +370,40 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
-          SizedBox(
-            height: 272,
-            child: ListView.builder(
-              itemCount: (data.length + _inforCount - 1) ~/ _inforCount,
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Row(
-                      children: [
-                        const SizedBox(width: 36),
-                        Expanded(
-                          child: InforGridWidget(
-                            data: data[index * _inforCount],
-                            onTap: () {},
-                          ),
+          ListView.builder(
+            itemCount: (data.length + _inforCount - 1) ~/ _inforCount,
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
+            // physics: const ClampingScrollPhysics(),
+            physics:  const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  Row(
+                    children: [
+                      const SizedBox(width: 36),
+                      Expanded(
+                        child: InforGridWidget(
+                          data: data[index * _inforCount],
+                          onTap: () {},
                         ),
-                        const SizedBox(width: 24),
-                        Expanded(
-                          child: index * _inforCount + 1 >= data.length
-                              ? Container()
-                              : InforGridWidget(
-                                  data: data[index * _inforCount + 1],
-                                  onTap: () {},
-                                ),
-                        ),
-                        const SizedBox(width: 36),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                  ],
-                );
-              },
-            ),
+                      ),
+                      const SizedBox(width: 24),
+                      Expanded(
+                        child: index * _inforCount + 1 >= data.length
+                            ? Container()
+                            : InforGridWidget(
+                                data: data[index * _inforCount + 1],
+                                onTap: () {},
+                              ),
+                      ),
+                      const SizedBox(width: 36),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                ],
+              );
+            },
           ),
         ],
       ),

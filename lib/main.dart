@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/ui/customer/dress_load_screen/dress_load_screen.dart';
 import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dart';
 import 'package:holding_app/src/ui/onboarding/onboarding_one/onboarding_one.dart';
 
@@ -12,10 +13,10 @@ class MyApp extends StatelessWidget {
   // This widgets is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: ProfileScreen(),
+      home: DressLoadScreen(),
     );
   }
 }
