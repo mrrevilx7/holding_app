@@ -305,9 +305,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
               ),
-              SizedBox(width: 24),
+              const SizedBox(width: 24),
               Container(
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   right: 36,
                 ),
                 width: 162 * w,
@@ -320,7 +320,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 18 * h),
-                    Text(
+                    const Text(
                       "Xarajatlar",
                       style: TextStyle(
                         fontFamily: 'Roboto',
@@ -330,7 +330,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     SizedBox(height: 18 * h),
-                    Text(
+                    const Text(
                       "164",
                       style: TextStyle(
                         fontFamily: 'Roboto',
@@ -340,7 +340,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     SizedBox(height: 18 * h),
-                    Text(
+                    const Text(
                       "\$",
                       style: TextStyle(
                         fontFamily: 'Roboto',
