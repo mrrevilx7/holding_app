@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:holding_app/src/model/information_model/information_model.dart';
@@ -125,7 +124,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,7 +175,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           color: AppTheme.black.withOpacity(0.3),
                           spreadRadius: 0,
                           blurRadius: 4,
-                          offset: Offset(0, 1), // changes position of shadow
+                          offset: const Offset(0, 1), // changes position of shadow
                         ),
                       ],
                     ),
@@ -220,7 +219,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         color: AppTheme.black.withOpacity(0.3),
                         spreadRadius: 0,
                         blurRadius: 4,
-                        offset: Offset(0, 1), // changes position of shadow
+                        offset: const Offset(0, 1), // changes position of shadow
                       ),
                     ],
                   ),
