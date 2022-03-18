@@ -1,11 +1,10 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../repository/repository.dart';
 import '../../../utils/utils_screen.dart';
 import '../forgot_password/forgot_password_screen.dart';
 
@@ -20,6 +19,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _usernameCon = TextEditingController();
   final TextEditingController _passwordCon = TextEditingController();
   final TextEditingController _phoneCon = TextEditingController();
+  final Repository _repository = Repository();
   bool _showEye = false;
   bool isNext = false;
   bool isLoading = false;
@@ -44,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _phoneCon.addListener(() {
       if (_usernameCon.text.length > 2 &&
           _passwordCon.text.length > 2 &&
-          _phoneCon.text.length  == 9) {
+          _phoneCon.text.length == 9) {
         setState(() {
           isNext = true;
         });
@@ -355,38 +355,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Row(
                       children: [
                         GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              tick = !tick;
-                            });
-                          },
-                          child: tick
-                              ? Container(
-                            margin: const EdgeInsets.only(
-                              left: 24,
-                            ),
-                            width: 15 * w,
-                            height: 15 * w,
-                            child: Center(
-                              child: SvgPicture.asset(
-                                "assets/icons/tick.svg",
-                                color: Colors.green,
-                              ),
-                            ),
-                          )
-                          : Container(
-                                  margin: const EdgeInsets.only(
-                                    left: 24,
-                                  ),
-                                  width: 15 * w,
-                                  height: 15 * w,
-                                  decoration: BoxDecoration(
-                                    color: AppTheme.neturalGray,
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                )
-
-                        ),
+                            onTap: () {
+                              setState(() {
+                                tick = !tick;
+                              });
+                            },
+                            child: tick
+                                ? Container(
+                                    margin: const EdgeInsets.only(
+                                      left: 24,
+                                    ),
+                                    width: 15 * w,
+                                    height: 15 * w,
+                                    child: Center(
+                                      child: SvgPicture.asset(
+                                        "assets/icons/tick.svg",
+                                        color: Colors.green,
+                                      ),
+                                    ),
+                                  )
+                                : Container(
+                                    margin: const EdgeInsets.only(
+                                      left: 24,
+                                    ),
+                                    width: 15 * w,
+                                    height: 15 * w,
+                                    decoration: BoxDecoration(
+                                      color: AppTheme.neturalGray,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                  )),
                         const SizedBox(width: 10),
                         Expanded(
                           child: Column(
@@ -394,7 +392,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichText(
-                                text:  TextSpan(
+                                text: TextSpan(
                                   children: <TextSpan>[
                                     TextSpan(
                                       text: "Shartlarga roziman",
@@ -405,7 +403,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         fontSize: 14,
                                       ),
                                     ),
-                                      const TextSpan(
+                                    const TextSpan(
                                       text: " Xizmat ko'rsatish shartlari\nva ",
                                       style: TextStyle(
                                         fontWeight: FontWeight.w400,
@@ -429,13 +427,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ],
                           ),
                         ),
-
                       ],
                     ),
                     GestureDetector(
                       onTap: () {
                         if (isNext) {
-                          _sendApi(
+                          _sendApiReg(
                             _usernameCon.text,
                             _passwordCon.text,
                           );
@@ -512,4 +509,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 }
 
-Future<void> _sendApi(String username, String password) async {}
+Future<void> _sendApiReg(String username, String password) async {
+
+}

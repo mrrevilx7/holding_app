@@ -373,7 +373,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             itemCount: (data.length + _inforCount - 1) ~/ _inforCount,
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
-            // physics: const ClampingScrollPhysics(),
             physics:  const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return Column(

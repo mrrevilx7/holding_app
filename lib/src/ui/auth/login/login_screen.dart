@@ -1,13 +1,20 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:holding_app/src/model/auth_api/login/auth_api_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:holding_app/src/ui/auth/register/register_screen.dart';
-
+import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dart';
+import '../../../dialog/dialog.dart';
+import '../../../repository/repository.dart';
 import '../../../utils/utils_screen.dart';
+import '../../delivery/delivery.dart';
+import '../../director/director_screen.dart';
+import '../../manager/manager_screen.dart';
+import '../../seller/seller_screen.dart';
+import '../../warehouse/warehouse.dart';
 import '../forgot_password/forgot_password_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -18,7 +25,9 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _usernameCon = TextEditingController();
-  final TextEditingController _passwordCon = TextEditingController();
+  late TextEditingController _passwordCon = TextEditingController();
+  final Repository _repository = Repository();
+
   bool _showEye = false;
   bool isNext = false;
   bool isLoading = false;
@@ -328,6 +337,86 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-}
 
-Future<void> _sendApi(String username, String password) async {}
+  Future<void> _sendApi(String user, String pass) async {
+    var response = await _repository.sendLogin(user, pass);
+    if (response.isSuccess) {
+      LoginModel result = LoginModel.fromJson(response.result);
+      if (result.userRole == "user") {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("token", result.token);
+        Navigator.popUntil(context, (route) => route.isFirst);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const ProfileScreen();
+            },
+          ),
+        );
+      }if ( result.userRole == "saller") {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("token", result.token);
+        Navigator.popUntil(context, (route) => route.isFirst);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const SallerScreen();
+            },
+          ),
+        );
+      }if ( result.userRole == "warehouse") {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("token", result.token);
+        Navigator.popUntil(context, (route) => route.isFirst);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const WarehouseScreen();
+            },
+          ),
+        );
+      }if ( result.userRole == "delivery") {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("token", result.token);
+        Navigator.popUntil(context, (route) => route.isFirst);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const DeliveryScreen();
+            },
+          ),
+        );
+      }if ( result.userRole == "director") {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("token", result.token);
+        Navigator.popUntil(context, (route) => route.isFirst);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const DirectorScreen();
+            },
+          ),
+        );
+      }if ( result.userRole == "manager") {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("token", result.token);
+        Navigator.popUntil(context, (route) => route.isFirst);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const ManagerScreen();
+            },
+          ),
+        );
+      } else {
+        CenterDialog.showErrorDialog(context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
+      }
+    }
+  }
+}
