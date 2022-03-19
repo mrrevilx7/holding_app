@@ -356,7 +356,7 @@ class _LoginScreenState extends State<LoginScreen> {
         );
       }if ( result.userRole == "saller") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
-        prefs.setString("token", result.id);
+        prefs.setString("token", result.token);
         Navigator.popUntil(context, (route) => route.isFirst);
         Navigator.pushReplacement(
           context,

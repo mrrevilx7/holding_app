@@ -9,13 +9,6 @@ import '../../../dialog/dialog.dart';
 import '../../../repository/repository.dart';
 import '../../../utils/utils_screen.dart';
 import '../../customer/profile_view/profile_view_screen.dart';
-import '../../delivery/delivery.dart';
-import '../../director/director_screen.dart';
-import '../../manager/manager_screen.dart';
-import '../../seller/seller_screen.dart';
-import '../../warehouse/warehouse.dart';
-import '../forgot_password/forgot_password_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -444,7 +437,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           _sendApiReg(
                             _usernameCon.text,
                             _passwordCon.text,
-                              _phoneCon.text,
+                            _phoneCon.text,
                           );
                         }
                       },
@@ -518,10 +511,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-  Future<void> _sendApiReg(String user, String pass, String phone,) async {
-    var response = await _repository.sendRegister(user, phone, pass,);
+  Future<void> _sendApiReg(
+    String user,
+    String pass,
+    String phone,
+  ) async {
+    var response = await _repository.sendRegister(
+      user,
+      phone,
+      pass,
+    );
     if (response.isSuccess) {
-      RegisterModel result =  RegisterModel.fromJson(response.result);
+      RegisterModel result = RegisterModel.fromJson(response.result);
       if (result.userRole == "user") {
         Navigator.pushReplacement(
           context,
@@ -532,10 +533,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         );
       } else {
-        CenterDialog.showErrorDialog(context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
+        CenterDialog.showErrorDialog(
+            context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
       }
     }
-
   }
 }
-
