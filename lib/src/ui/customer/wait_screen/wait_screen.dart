@@ -1,8 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
-
 import '../../../utils/utils_screen.dart';
 
 class WaitScreen extends StatefulWidget {
@@ -95,6 +92,7 @@ class _WaitScreenState extends State<WaitScreen> {
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Poppins',
                   color: AppTheme.white,
+                  letterSpacing: 0.3,
                 ),
               ),
             ),
