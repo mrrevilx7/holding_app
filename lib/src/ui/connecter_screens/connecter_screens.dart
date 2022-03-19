@@ -10,7 +10,17 @@ class ConnectScreen extends StatefulWidget {
   State<ConnectScreen> createState() => _ConnectScreenState();
 }
 
-class _ConnectScreenState extends State<ConnectScreen> {
+class _ConnectScreenState extends State<ConnectScreen>
+    with SingleTickerProviderStateMixin {
+  TabController? _controller;
+  TextEditingController Statecontroller = new TextEditingController();
+
+  @override
+  void initState() {
+    _controller = TabController(length: 3, vsync: this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double w = Utils.getWidth(context);
@@ -62,6 +72,57 @@ class _ConnectScreenState extends State<ConnectScreen> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               color: AppTheme.black,
+            ),
+            child: TabBar(
+              controller: _controller,
+              labelColor: AppTheme.lightRed,
+              unselectedLabelColor: AppTheme.white,
+              labelStyle: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Poppins',
+              ),
+              unselectedLabelStyle: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                fontFamily: 'Poppins',
+              ),
+              tabs: [
+                Container(
+                  width: 75 * w,
+                  height:  40 * h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: AppTheme.white,
+                  ),
+                  child: Tab(
+                    text: "All",
+                  ),
+                ),
+                Container(
+                  width: 75 * w,
+                  height:  40 * h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: AppTheme.white,
+                  ),
+                  child: Tab(
+                    text: "Sotish",
+                  ),
+                ),
+                Container(
+                  width: 75 * w,
+                  height:  40 * h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: AppTheme.white,
+                  ),
+                  child: Tab(
+                    text: "50 / 50",
+                  ),
+                ),
+
+              ],
             ),
           ),
         ],
