@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/ui/seller/seller_screen.dart';
 
 import '../../theme/app_theme.dart';
 import '../../utils/utils_screen.dart';
@@ -13,7 +14,10 @@ class ConnectScreen extends StatefulWidget {
 class _ConnectScreenState extends State<ConnectScreen>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
-  TextEditingController Statecontroller = new TextEditingController();
+  TextEditingController Statecontroller = TextEditingController();
+  late bool _isCount = false;
+  bool _inCount = false;
+  bool _onCount = false;
 
   @override
   void initState() {
@@ -31,7 +35,7 @@ class _ConnectScreenState extends State<ConnectScreen>
           SizedBox(height: 40 * h),
           Row(
             children: [
-              SizedBox(width: 36 * w),
+              SizedBox(width: 24 * w),
               const Expanded(
                 child: Text(
                   "Sotivchi",
@@ -59,13 +63,14 @@ class _ConnectScreenState extends State<ConnectScreen>
                   ),
                 ),
               ),
+              SizedBox(width: 24),
             ],
           ),
           Container(
             margin: EdgeInsets.only(
               top: 16 * h,
-              left: 36 * w,
-              right: 36 * w,
+              left: 24 * w,
+              right: 24 * w,
             ),
             width: double.infinity,
             height: 60 * h,
@@ -75,53 +80,46 @@ class _ConnectScreenState extends State<ConnectScreen>
             ),
             child: TabBar(
               controller: _controller,
-              labelColor: AppTheme.lightRed,
+              indicatorColor: Colors.transparent,
+              labelColor: AppTheme.black,
               unselectedLabelColor: AppTheme.white,
               labelStyle: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 fontFamily: 'Poppins',
+                color: AppTheme.black,
               ),
               unselectedLabelStyle: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w700,
                 fontFamily: 'Poppins',
               ),
-              tabs: [
-                Container(
-                  width: 75 * w,
-                  height:  40 * h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: AppTheme.white,
-                  ),
-                  child: Tab(
-                    text: "All",
-                  ),
+              indicatorPadding: const EdgeInsets.all(6),
+              indicator: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                borderRadius: BorderRadius.circular(100),
+                color: Colors.white,
+              ),
+              tabs: const [
+                Tab(
+                  text: "All",
                 ),
-                Container(
-                  width: 75 * w,
-                  height:  40 * h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: AppTheme.white,
-                  ),
-                  child: Tab(
-                    text: "Sotish",
-                  ),
+                Tab(
+                  text: "Sotish",
                 ),
-                Container(
-                  width: 75 * w,
-                  height:  40 * h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: AppTheme.white,
-                  ),
-                  child: Tab(
-                    text: "50 / 50",
-                  ),
+                Tab(
+                  text: "50 / 50",
                 ),
-
+              ],
+            ),
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _controller,
+              children: const [
+                SallerScreen(),
+                SallerScreen(),
+                SallerScreen(),
               ],
             ),
           ),
