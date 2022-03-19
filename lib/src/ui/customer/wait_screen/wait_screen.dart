@@ -1,9 +1,9 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
-import 'package:holding_app/src/ui/seller/seller_screen.dart';
 
 import '../../../utils/utils_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class WaitScreen extends StatefulWidget {
   const WaitScreen({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _WaitScreenState extends State<WaitScreen> {
                 height: 185 * w,
                 fit: BoxFit.cover,
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Image.asset(
                 "assets/images/phone_pass_lock.png",
                 width: 180 * w,
@@ -49,7 +49,7 @@ class _WaitScreenState extends State<WaitScreen> {
             fit: BoxFit.cover,
           ),
           const SizedBox(height: 12),
-          Text(
+          const Text(
             "Assalomu alaykum!",
             style: TextStyle(
               fontFamily: 'Poppins',
@@ -76,14 +76,29 @@ class _WaitScreenState extends State<WaitScreen> {
             ),
           ),
           Container(
+            margin: EdgeInsets.only(
+              left: 36 * w,
+              right: 36 * w,
+              top: 24 * h,
+            ),
             width: double.infinity,
             height: 62 * h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               color: AppTheme.lightBlue,
             ),
+            child: const Center(
+              child: Text(
+                "Sahifani qayta yuklash",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Poppins',
+                  color: AppTheme.white,
+                ),
+              ),
+            ),
           ),
-
         ],
       ),
     );
