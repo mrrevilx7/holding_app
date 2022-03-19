@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/theme/app_theme.dart';
+import 'package:holding_app/src/utils/utils_screen.dart';
 
 class SallerScreen extends StatefulWidget {
   const SallerScreen({Key? key}) : super(key: key);
@@ -10,6 +12,10 @@ class SallerScreen extends StatefulWidget {
 class _SallerScreenState extends State<SallerScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    double w = Utils.getWidth(context);
+    double h = Utils.getWidth(context);
+    return Scaffold(
+
+    );
   }
 }

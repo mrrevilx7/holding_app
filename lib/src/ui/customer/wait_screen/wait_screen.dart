@@ -72,27 +72,32 @@ class _WaitScreenState extends State<WaitScreen> {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(
-              left: 36 * w,
-              right: 36 * w,
-              top: 24 * h,
-            ),
-            width: double.infinity,
-            height: 62 * h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: AppTheme.lightBlue,
-            ),
-            child: const Center(
-              child: Text(
-                "Sahifani qayta yuklash",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Poppins',
-                  color: AppTheme.white,
-                  letterSpacing: 0.3,
+          GestureDetector(
+            onTap: () {
+
+            },
+            child: Container(
+              margin: EdgeInsets.only(
+                left: 36 * w,
+                right: 36 * w,
+                top: 24 * h,
+              ),
+              width: double.infinity,
+              height: 62 * h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: AppTheme.lightBlue,
+              ),
+              child: const Center(
+                child: Text(
+                  "Sahifani qayta yuklash",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Poppins',
+                    color: AppTheme.white,
+                    letterSpacing: 0.3,
+                  ),
                 ),
               ),
             ),
