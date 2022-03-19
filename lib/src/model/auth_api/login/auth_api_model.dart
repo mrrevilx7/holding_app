@@ -1,5 +1,4 @@
 
-
 class LoginModel {
   LoginModel({
     required this.token,

@@ -4,15 +4,14 @@ import '../api_provider/api_provider.dart';
 
 class Repository {
   ApiProvider apiProvider = ApiProvider();
-  //
+
   Future<HttpResult> sendLogin(String user, String pass) =>
       apiProvider.sendLogin(user, pass);
-  //
-  // Future<HttpResult> sendRegister(
-  //     String name,
-  //     String phone,
-  //     String password,
-  //     String repassword,
-  //     ) =>
-  //     apiProvider.sendRegister(name, phone, password, repassword);
+
+  Future<HttpResult> sendRegister(
+      String user,
+      String pass,
+      String phone,
+      ) =>
+      apiProvider.sendRegister(user, phone, pass,);
 }

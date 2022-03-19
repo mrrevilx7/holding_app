@@ -90,4 +90,17 @@ class ApiProvider {
     String url = baseUrl + "/auth/login/";
     return await _postRequest(url, data);
   }
+
+  Future<HttpResult> sendRegister(String user,  String phone, String pass) async {
+    var data = {
+      "username": user,
+      "password": pass,
+      "phone": phone,
+    };
+
+    String url = baseUrl + "/auth/register/";
+    return await _postRequest(url, data);
+  }
+
+
 }
