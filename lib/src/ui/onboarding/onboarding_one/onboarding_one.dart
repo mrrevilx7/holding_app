@@ -91,32 +91,32 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-
                   onb[_selectedIndex].isSelect == true
                       ? GestureDetector(
-                        onTap: () {
-                          _selectedIndex--;
-                          controller.jumpToPage(
-                            _selectedIndex,
-                          );
-
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(left: 16),
-                          width: 24,
-                          height: 24,
-                          decoration: const BoxDecoration(
-                            color: Colors.transparent,
-                          ),
-                          child: Center(
-                            child: SvgPicture.asset(
-                              onb[_selectedIndex].arrowRight,
-                              width: 24,
-                              height: 24,
+                          onTap: () {
+                            _selectedIndex--;
+                            controller.animateTo(
+                              _selectedIndex.toDouble(),
+                              duration: const Duration(milliseconds: 270),
+                              curve: Curves.easeInOut,
+                            );
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 16),
+                            width: 24,
+                            height: 24,
+                            decoration: const BoxDecoration(
+                              color: Colors.transparent,
+                            ),
+                            child: Center(
+                              child: SvgPicture.asset(
+                                onb[_selectedIndex].arrowRight,
+                                width: 24,
+                                height: 24,
+                              ),
                             ),
                           ),
-                        ),
-                      )
+                        )
                       : Container(
                           margin: const EdgeInsets.only(left: 16),
                           width: 24,
@@ -126,7 +126,6 @@ class _OnboardingOneScreenState extends State<OnboardingOneScreen> {
                           ),
                         ),
                   const Spacer(),
-
                   GestureDetector(
                     onTap: () {
                       Navigator.pushReplacement(

@@ -26,14 +26,53 @@ class _WaitScreenState extends State<WaitScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset("assets/images/list.png"),
-              SvgPicture.asset("assets/images/phone_pass_lock.png"),
-
-
+              Image.asset(
+                "assets/images/list.png",
+                width: 185 * w,
+                height: 185 * w,
+                fit: BoxFit.cover,
+              ),
+              SizedBox(width: 16),
+              Image.asset(
+                "assets/images/phone_pass_lock.png",
+                width: 180 * w,
+                height: 180 * w,
+                fit: BoxFit.cover,
+              ),
             ],
           ),
+          Image.asset(
+            "assets/images/programmer.png",
+            width: 365 * w,
+            height: 312 * h,
+            fit: BoxFit.cover,
+          ),
+          SizedBox(height: 12),
+          Text(
+            "Assalomu alaykum!",
+            style: TextStyle(
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w400,
+              fontSize: 18,
+              letterSpacing: 0.3,
+            ),
+          ),
+          SizedBox(height: 12),
+          Align(
+            child: Text(
+              "Siz adminstrator tekshiruvidan o’tmoqdasiz! 24 soat davomida sizni tekshirib sizga habarnoma yuboramiz",
+              maxLines: 5,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w400,
+                fontSize: 18,
+                letterSpacing: 0.3,
+              ),
+            ),
+          ),
         ],
-
       ),
     );
   }
