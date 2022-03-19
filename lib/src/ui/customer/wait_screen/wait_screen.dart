@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:holding_app/src/ui/seller/seller_screen.dart';
 
 import '../../../utils/utils_screen.dart';
@@ -47,7 +48,7 @@ class _WaitScreenState extends State<WaitScreen> {
             height: 312 * h,
             fit: BoxFit.cover,
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Text(
             "Assalomu alaykum!",
             style: TextStyle(
@@ -55,23 +56,34 @@ class _WaitScreenState extends State<WaitScreen> {
               fontWeight: FontWeight.w400,
               fontSize: 18,
               letterSpacing: 0.3,
+              color: AppTheme.black,
             ),
           ),
-          SizedBox(height: 12),
-          Align(
+          const SizedBox(height: 12),
+          const Align(
             child: Text(
-              "Siz adminstrator tekshiruvidan o’tmoqdasiz! 24 soat davomida sizni tekshirib sizga habarnoma yuboramiz",
+              "Siz adminstrator tekshiruvidan o’tmoqdasiz! 24 soat davomida sizni tekshirib sizga \n habarnoma yuboramiz",
               maxLines: 5,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w400,
-                fontSize: 18,
+                fontSize: 14,
                 letterSpacing: 0.3,
+                color: AppTheme.darkGray,
               ),
             ),
           ),
+          Container(
+            width: double.infinity,
+            height: 62 * h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: AppTheme.lightBlue,
+            ),
+          ),
+
         ],
       ),
     );
