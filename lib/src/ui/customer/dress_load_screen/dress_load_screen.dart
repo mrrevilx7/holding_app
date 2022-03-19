@@ -15,6 +15,7 @@ class _DressLoadScreenState extends State<DressLoadScreen> {
     double w = Utils.getWidth(context);
     double h = Utils.getHeight(context);
     return Scaffold(
+      backgroundColor: AppTheme.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

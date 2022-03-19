@@ -30,12 +30,13 @@ class _ConnectScreenState extends State<ConnectScreen>
     double w = Utils.getWidth(context);
     double h = Utils.getWidth(context);
     return Scaffold(
+      backgroundColor: AppTheme.white,
       body: Column(
         children: [
           SizedBox(height: 40 * h),
           Row(
             children: [
-              SizedBox(width: 24 * w),
+              SizedBox(width: 16 * w),
               const Expanded(
                 child: Text(
                   "Sotivchi",
@@ -63,14 +64,14 @@ class _ConnectScreenState extends State<ConnectScreen>
                   ),
                 ),
               ),
-              SizedBox(width: 24),
+              SizedBox(width: 16 * w),
             ],
           ),
           Container(
             margin: EdgeInsets.only(
               top: 16 * h,
-              left: 24 * w,
-              right: 24 * w,
+              left: 16 * w,
+              right: 16 * w,
             ),
             width: double.infinity,
             height: 60 * h,
