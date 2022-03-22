@@ -354,7 +354,21 @@ class _LoginScreenState extends State<LoginScreen> {
             },
           ),
         );
-      }if ( result.userRole == "saller") {
+      }
+      if (result.userRole == "Admin") {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString("token", result.token);
+        Navigator.popUntil(context, (route) => route.isFirst);
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const ProfileScreen();
+            },
+          ),
+        );
+      }
+      if (result.userRole == "Sotuvchi") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("token", result.token);
         Navigator.popUntil(context, (route) => route.isFirst);
@@ -366,7 +380,8 @@ class _LoginScreenState extends State<LoginScreen> {
             },
           ),
         );
-      }if ( result.userRole == "warehouse") {
+      }
+      if (result.userRole == "Omborchi") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("token", result.token);
         Navigator.popUntil(context, (route) => route.isFirst);
@@ -378,7 +393,8 @@ class _LoginScreenState extends State<LoginScreen> {
             },
           ),
         );
-      }if ( result.userRole == "delivery") {
+      }
+      if (result.userRole == "Yetkazib berish") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("token", result.token);
         Navigator.popUntil(context, (route) => route.isFirst);
@@ -390,7 +406,8 @@ class _LoginScreenState extends State<LoginScreen> {
             },
           ),
         );
-      }if ( result.userRole == "director") {
+      }
+      if (result.userRole == "director") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("token", result.token);
         Navigator.popUntil(context, (route) => route.isFirst);
@@ -402,7 +419,8 @@ class _LoginScreenState extends State<LoginScreen> {
             },
           ),
         );
-      }if ( result.userRole == "manager") {
+      }
+      if (result.userRole == "Menejer") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("token", result.token);
         Navigator.popUntil(context, (route) => route.isFirst);
@@ -415,7 +433,8 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         );
       } else {
-        CenterDialog.showErrorDialog(context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
+        CenterDialog.showErrorDialog(
+            context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
       }
     }
   }

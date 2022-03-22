@@ -175,7 +175,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           color: AppTheme.black.withOpacity(0.3),
                           spreadRadius: 0,
                           blurRadius: 4,
-                          offset: const Offset(0, 1), // changes position of shadow
+                          offset:
+                              const Offset(0, 1), // changes position of shadow
                         ),
                       ],
                     ),
@@ -219,7 +220,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         color: AppTheme.black.withOpacity(0.3),
                         spreadRadius: 0,
                         blurRadius: 4,
-                        offset: const Offset(0, 1), // changes position of shadow
+                        offset:
+                            const Offset(0, 1), // changes position of shadow
                       ),
                     ],
                   ),
@@ -260,7 +262,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               Container(
                 margin: const EdgeInsets.only(
-                  left: 36 ,
+                  left: 36,
                 ),
                 width: 162 * w,
                 height: 120,
@@ -371,9 +373,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           ListView.builder(
             itemCount: (data.length + _inforCount - 1) ~/ _inforCount,
-            scrollDirection: Axis.horizontal,
             shrinkWrap: true,
-            physics:  const NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return Column(
                 children: [

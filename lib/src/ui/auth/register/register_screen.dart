@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:holding_app/src/model/auth_api/register/register_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:holding_app/src/ui/auth/login/login_screen.dart';
 
 import '../../../dialog/dialog.dart';
 import '../../../repository/repository.dart';
@@ -471,33 +472,46 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    Container(
-                      margin: EdgeInsets.only(bottom: Platform.isIOS ? 32 : 24),
-                      child: RichText(
-                        text: const TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: "Hisob allaqachon mavjud?  ",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontFamily: 'Avenir',
-                                color: AppTheme.gray,
-                                fontSize: 14,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const LoginScreen();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
+                        margin:
+                            EdgeInsets.only(bottom: Platform.isIOS ? 32 : 24),
+                        child: RichText(
+                          text: const TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: "Hisob allaqachon mavjud?  ",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'Avenir',
+                                  color: AppTheme.gray,
+                                  fontSize: 14,
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: "Tizimga kirish",
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                decorationColor: AppTheme.neturalBlue,
-                                decorationThickness: 1.75,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: 'Avenir',
-                                color: AppTheme.neturalBlue,
-                                fontSize: 14,
-                              ),
-                            )
-                          ],
+                              TextSpan(
+                                text: "Tizimga kirish",
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: AppTheme.neturalBlue,
+                                  decorationThickness: 1.75,
+                                  fontWeight: FontWeight.w700,
+                                  fontFamily: 'Avenir',
+                                  color: AppTheme.neturalBlue,
+                                  fontSize: 14,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -523,7 +537,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
     if (response.isSuccess) {
       RegisterModel result = RegisterModel.fromJson(response.result);
-      if (result.userRole == "user") {
+      if (result.userRole == "Foydalanuvchi") {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
