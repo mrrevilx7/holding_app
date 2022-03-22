@@ -11,7 +11,7 @@ import '../../../utils/utils_screen.dart';
 import '../../delivery/delivery.dart';
 import '../../director/director_screen.dart';
 import '../../manager/manager_screen.dart';
-import '../../seller/seller_screen.dart';
+import '../../seller/seller_screen/seller_screen.dart';
 import '../../warehouse/warehouse.dart';
 import '../forgot_password/forgot_password_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -342,7 +342,7 @@ class _LoginScreenState extends State<LoginScreen> {
     var response = await _repository.sendLogin(user, pass);
     if (response.isSuccess) {
       LoginModel result = LoginModel.fromJson(response.result);
-      if (result.userRole == "user") {
+      if (result.userRole == "Foydalanuvchi") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("token", result.token);
         Navigator.popUntil(context, (route) => route.isFirst);

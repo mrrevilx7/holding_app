@@ -4,7 +4,6 @@ import 'package:holding_app/src/ui/customer/dress_load_screen/dress_load_screen.
 import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dart';
 import 'package:holding_app/src/ui/customer/wait_screen/wait_screen.dart';
 import 'package:holding_app/src/ui/onboarding/onboarding_one/onboarding_one.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: ConnectScreen(),
+      home: OnboardingOneScreen(),
     );
   }
 }

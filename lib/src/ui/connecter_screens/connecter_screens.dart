@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:holding_app/src/ui/seller/seller_screen.dart';
-
 import '../../theme/app_theme.dart';
 import '../../utils/utils_screen.dart';
+import '../seller/ saller_screen_sale/seller_screen_sale.dart';
+import '../seller/seller_screen/seller_screen.dart';
 
 class ConnectScreen extends StatefulWidget {
   const ConnectScreen({Key? key}) : super(key: key);
@@ -119,7 +119,7 @@ class _ConnectScreenState extends State<ConnectScreen>
               controller: _controller,
               children: const [
                 SallerScreen(),
-                SallerScreen(),
+                SallerScreenSale(),
                 SallerScreen(),
               ],
             ),

@@ -19,9 +19,8 @@ class _DressLoadScreenState extends State<DressLoadScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 82 * h),
           Container(
-            margin: EdgeInsets.only(left: 36, right: 36),
+            margin: EdgeInsets.only(left: 36 * w,  top: 82 * h, right: 36 * h,),
             width: double.infinity,
             height: 272,
             decoration: BoxDecoration(
