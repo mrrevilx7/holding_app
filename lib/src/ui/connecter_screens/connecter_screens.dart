@@ -15,9 +15,6 @@ class _ConnectScreenState extends State<ConnectScreen>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
   TextEditingController Statecontroller = TextEditingController();
-  late bool _isCount = false;
-  bool _inCount = false;
-  bool _onCount = false;
 
   @override
   void initState() {

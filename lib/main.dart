@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: OnboardingOneScreen(),
+      home: const ConnectScreen(),
       //ProfileScreen(),
       //NewsScreen(),
       //OnboardingOneScreen(),

@@ -7,7 +7,6 @@ import '../../../dialog/saller_screen_sale_center_dialog/saller_screen_sale_cent
 import '../../../utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class SallerScreenSale extends StatefulWidget {
   const SallerScreenSale({Key? key}) : super(key: key);
 
@@ -47,8 +46,7 @@ class _SallerSCState extends State<SallerScreenSale> {
                 child: Row(
                   children: [
                     SizedBox(width: 12 * w),
-                    Text("Ko’ylak  nomini tanlang"),
-                    Spacer(),
+                    Expanded(child: Text("Ko’ylak  nomini tanlang")),
                     SvgPicture.asset(
                       "assets/icons/vector_top.svg",
                     ),
@@ -103,68 +101,67 @@ class _SallerSCState extends State<SallerScreenSale> {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(
-              top: 18 * h,
-              left: 16 * w,
-            ),
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.only(
-                    left: 16,
-                    top: 10,
-                  ),
-                  width: 168 * w,
-                  height: 40 * h,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 1,
-                      color: AppTheme.black,
-                    ),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Expanded(
-                    child: TextField(
-                      controller: _priceCon,
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: 'Berilgan summa',
-                        hintStyle: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Poppins',
-                          color: AppTheme.black.withOpacity(0.5),
 
-                        ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                  top: 18 * h,
+                  left: 16 * w,
+                ),
+                padding: EdgeInsets.only(
+                  left: 16 * w,
+                  top: 10 * h,
+                ),
+                width: 168 * w,
+                height: 40 * h,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: AppTheme.black,
+                  ),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Expanded(
+                  child: TextField(
+                    controller: _priceCon,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Berilgan summa',
+                      hintStyle: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Poppins',
+                        color: AppTheme.black.withOpacity(0.5),
                       ),
                     ),
                   ),
                 ),
-                Spacer(),
-                Text(
-                  'Qolgan:',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
-                    color: AppTheme.black,
-                  ),
+              ),
+              Spacer(),
+              Text(
+                'Qolgan:',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  color: AppTheme.black,
                 ),
-                Text(
-                  "\$ 10000",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'Poppins',
-                    color: AppTheme.black,
-                  ),
+              ),
+              Text(
+                "\$ 10000",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Poppins',
+                  color: AppTheme.black,
                 ),
-                SizedBox(
-                  width: 16 * w,
-                ),
-              ],
-            ),
+              ),
+              SizedBox(
+                width: 16 * w,
+              ),
+            ],
           ),
           SizedBox(height: 18 * h),
           // Row(

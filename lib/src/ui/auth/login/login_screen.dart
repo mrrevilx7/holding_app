@@ -8,6 +8,7 @@ import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dar
 import '../../../dialog/dialog.dart';
 import '../../../repository/repository.dart';
 import '../../../utils/utils_screen.dart';
+import '../../connecter_screens/connecter_screens.dart';
 import '../../delivery/delivery.dart';
 import '../../director/director_screen.dart';
 import '../../manager/manager_screen.dart';
@@ -144,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         )),
                       ),
-                      Spacer(),
+                      SizedBox(height: 68 * h),
                       Container(
                         margin: const EdgeInsets.only(
                           left: 24,
@@ -378,7 +379,7 @@ class _LoginScreenState extends State<LoginScreen> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const SallerScreen();
+              return const ConnectScreen();
             },
           ),
         );
@@ -436,7 +437,8 @@ class _LoginScreenState extends State<LoginScreen> {
         );
       }
     } else {
-      CenterErrorDialog.showErrorDialog(context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
+      CenterErrorDialog.showErrorDialog(
+          context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
     }
   }
 }
