@@ -164,82 +164,83 @@ class _SallerSCState extends State<SallerScreenSale> {
             ],
           ),
           SizedBox(height: 18 * h),
-          // Row(
-          //   children: [
-          //     SizedBox(width: 16 * w),
-          //     Expanded(
-          //       child: Text("Berish sanasi:"),
-          //     ),
-          //     Container(
-          //       width: 122,
-          //       height: 46,
-          //       decoration: BoxDecoration(
-          //         borderRadius: BorderRadius.only(
-          //           topLeft: Radius.circular(16),
-          //           bottomLeft: Radius.circular(16),
-          //         ),
-          //         border: Border.all(
-          //           width: 1,
-          //           color: AppTheme.black,
-          //         ),
-          //       ),
-          //       child: Text("12/02/2021"),
-          //     ),
-          //     Container(
-          //       width: 74 * w,
-          //       height: 46 * h,
-          //       decoration: BoxDecoration(
-          //         borderRadius: BorderRadius.only(
-          //           topRight: Radius.circular(16),
-          //           bottomRight: Radius.circular(16),
-          //         ),
-          //         color: AppTheme.black,
-          //       ),
-          //       child: Center(
-          //         child: SvgPicture.asset(
-          //           "assets/icons/calendar.svg",
-          //           width: 24,
-          //           height: 24,
-          //           fit: BoxFit.cover,
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // ),
+          Row(
+            children: [
+              SizedBox(width: 16 * w),
+              const Text("Berish sanasi:"),
+              const Spacer(),
+              Container(
+                width: 122 * w,
+                height: 46 * h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    bottomLeft: Radius.circular(16),
+                  ),
+                  border: Border.all(
+                    width: 1,
+                    color: AppTheme.black,
+                  ),
+                ),
+                child: Center(child: Text("12/02/2021")),
+              ),
+              Container(
+                width: 74 * w,
+                height: 46 * h,
+                margin: EdgeInsets.only(
+                  right: 16 * w,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(16),
+                    bottomRight: Radius.circular(16),
+                  ),
+                  color: AppTheme.black,
+                ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    "assets/icons/calendar.svg",
+                    width: 24,
+                    height: 24,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ],
+          ),
           SizedBox(height: 16 * w),
-          // Row(
-          //   children: [
-          //     SizedBox(
-          //       width: 16 * w,
-          //     ),
-          //     Expanded(
-          //       child: Text(
-          //         "Telefonda sotildi",
-          //         style: TextStyle(
-          //           fontFamily: 'Poppins',
-          //           fontWeight: FontWeight.w400,
-          //           fontSize: 16,
-          //           color: AppTheme.black,
-          //         ),
-          //       ),
-          //     ),
-          //     Container(
-          //       width: 24 * w,
-          //       height: 24 * h,
-          //       decoration: BoxDecoration(
-          //         color: Colors.transparent,
-          //       ),
-          //       child: Center(
-          //         child: SvgPicture.asset(
-          //           "asset/icons/tick_black.svg",
-          //           width: 24,
-          //           height: 24,
-          //           fit: BoxFit.cover,
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // ),
+          Row(
+            children: [
+              SizedBox(
+                width: 16 * w,
+              ),
+              const Text(
+                "Telefonda sotildi",
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  color: AppTheme.black,
+                ),
+              ),
+              const Spacer(),
+              Container(
+                width: 24 * w,
+                height: 24 * h,
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    "asset/icons/tick_black.svg",
+                    width: 24,
+                    height: 24,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ],
+          ),
           SizedBox(height: 24 * w),
           // Row(
           //   children: [
