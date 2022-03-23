@@ -1,5 +1,3 @@
-
-
 class ProfileModel {
   ProfileModel({
     required this.count,
@@ -10,30 +8,25 @@ class ProfileModel {
 
   int count;
   String next;
-  dynamic previous;
-  List<Result> results;
+  String previous;
+  List<ProfileResult> results;
 
   factory ProfileModel.fromJson(Map<String, dynamic> json) => ProfileModel(
-    count: json["count"],
-    next: json["next"],
-    previous: json["previous"],
-    results: List<Result>.from(json["results"].map((x) => Result.fromJson(x))),
-  );
-
-  Map<String, dynamic> toJson() => {
-    "count": count,
-    "next": next,
-    "previous": previous,
-    "results": List<dynamic>.from(results.map((x) => x.toJson())),
-  };
+        count: json["count"] ?? 0,
+        next: json["next"] ?? " ",
+        previous: json["previous"] ?? " ",
+        results: List<ProfileResult>.from(
+            json["results"].map((x) => ProfileResult.fromJson(x))),
+      );
 }
 
-class Result {
-  Result({
+class ProfileResult {
+  ProfileResult({
     required this.id,
     required this.salonName,
     required this.address,
     required this.phone,
+    required this.image,
     required this.dateCreated,
     required this.dateUpdated,
     required this.account,
@@ -43,27 +36,25 @@ class Result {
   String salonName;
   String address;
   String phone;
+  String image;
   DateTime dateCreated;
   DateTime dateUpdated;
   int account;
 
-  factory Result.fromJson(Map<String, dynamic> json) => Result(
-    id: json["id"],
-    salonName: json["salon_name"],
-    address: json["address"],
-    phone: json["phone"],
-    dateCreated: DateTime.parse(json["date_created"]),
-    dateUpdated: DateTime.parse(json["date_updated"]),
-    account: json["account"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "salon_name": salonName,
-    "address": address,
-    "phone": phone,
-    "date_created": dateCreated.toIso8601String(),
-    "date_updated": dateUpdated.toIso8601String(),
-    "account": account,
-  };
+  factory ProfileResult.fromJson(Map<String, dynamic> json) => ProfileResult(
+        id: json["id"]?? 0,
+        salonName: json["salon_name"]?? " ",
+        address: json["address"]??" ",
+        phone: json["phone"]?? " ",
+        image: json["image"]?? " ",
+        dateCreated: json["date_created"] == null
+           ? DateTime.now()
+           : DateTime.parse(json["date_created"]),
+        dateUpdated:json["date_updated"] == null
+           ? DateTime.now()
+           : DateTime.parse(json["date_updated"]),
+        account: json["account"]?? 0,
+      );
 }
+
+

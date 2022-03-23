@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CenterDialog {
+class CenterErrorDialog {
   static void showErrorDialog(BuildContext context, index) {
     showDialog(
       context: context,

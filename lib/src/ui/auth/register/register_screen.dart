@@ -552,7 +552,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         );
       } else {
-        CenterDialog.showErrorDialog(
+        CenterErrorDialog.showErrorDialog(
             context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
       }
     }

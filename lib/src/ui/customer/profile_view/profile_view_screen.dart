@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/bloc/Profille_bloc/Profile_bloc.dart';
+import 'package:holding_app/src/model/api_models/Profile_api.dart';
 import 'package:holding_app/src/model/information_model/information_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:holding_app/src/ui/customer/news_screen/news_screen.dart';
@@ -99,7 +101,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
       price: 10.000,
     ),
   ];
+
   PageController _profileCon = PageController();
+
+  @override
+  void initState() {
+    profileBloc.getCustomers;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +116,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
     double h = Utils.getHeight(context);
     return Scaffold(
       backgroundColor: AppTheme.white,
-      body: ListView(
+      body:
+          // StreamBuilder(
+          //   stream: profileBloc.getCustomers,
+          //   builder: (BuildContext context, AsyncSnapshot<ProfileModel> snapshot) {
+          //     if (snapshot.hasData) {
+          //       List<ProfileResult> porfile = snapshot.data!.results;
+          //
+          //       return
+          ListView(
         padding: EdgeInsets.zero,
         children: [
           Container(
@@ -594,6 +611,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ],
       ),
+      //     }
+      //     return const Center(
+      //       child: CircularProgressIndicator(),
+      //     );
+      //   },
+      // ),
     );
   }
 }

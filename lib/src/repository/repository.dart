@@ -9,9 +9,15 @@ class Repository {
       apiProvider.sendLogin(user, pass);
 
   Future<HttpResult> sendRegister(
-      String user,
-      String pass,
-      String phone,
-      ) =>
-      apiProvider.sendRegister(user, phone, pass,);
+    String user,
+    String pass,
+    String phone,
+  ) =>
+      apiProvider.sendRegister(
+        user,
+        phone,
+        pass,
+      );
+
+  Future<HttpResult> getCustomers() => apiProvider.getCustomers();
 }

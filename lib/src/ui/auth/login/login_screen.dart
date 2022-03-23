@@ -436,7 +436,7 @@ class _LoginScreenState extends State<LoginScreen> {
         );
       }
     } else {
-      CenterDialog.showErrorDialog(context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
+      CenterErrorDialog.showErrorDialog(context, "Login yoki Password xato. Iltimos qayta urinib ko'ring");
     }
   }
 }

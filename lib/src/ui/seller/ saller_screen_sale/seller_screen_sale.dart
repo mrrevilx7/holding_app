@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/dialog/dialog.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 
+import '../../../dialog/saller_screen_sale_center_dialog/saller_screen_sale_center_dialog.dart';
 import '../../../utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 
 class SallerScreenSale extends StatefulWidget {
   const SallerScreenSale({Key? key}) : super(key: key);
@@ -54,17 +57,22 @@ class _SallerSCState extends State<SallerScreenSale> {
                 ),
               ),
               Expanded(
-                child: Container(
-                  margin: EdgeInsets.only(
-                    right: 16 * w,
-                  ),
-                  width: 24,
-                  height: 24,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                  ),
-                  child: Center(
-                    child: SvgPicture.asset("assets/icons/plus.svg"),
+                child: GestureDetector(
+                  onTap: () {
+                    CenterDialog.showSaleDialog(context, " ");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(
+                      right: 16 * w,
+                    ),
+                    width: 24,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                    ),
+                    child: Center(
+                      child: SvgPicture.asset("assets/icons/plus.svg"),
+                    ),
                   ),
                 ),
               ),
@@ -116,25 +124,21 @@ class _SallerSCState extends State<SallerScreenSale> {
                     ),
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          controller: _priceCon,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Berilgan summa',
-                            hintStyle: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Poppins',
-                              color: AppTheme.black.withOpacity(0.5),
+                  child: Expanded(
+                    child: TextField(
+                      controller: _priceCon,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Berilgan summa',
+                        hintStyle: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Poppins',
+                          color: AppTheme.black.withOpacity(0.5),
 
-                            ),
-                          ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 ),
                 Spacer(),
@@ -163,116 +167,116 @@ class _SallerSCState extends State<SallerScreenSale> {
             ),
           ),
           SizedBox(height: 18 * h),
-          Row(
-            children: [
-              SizedBox(width: 16 * w),
-              Expanded(
-                child: Text("Berish sanasi:"),
-              ),
-              Container(
-                width: 122,
-                height: 46,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    bottomLeft: Radius.circular(16),
-                  ),
-                  border: Border.all(
-                    width: 1,
-                    color: AppTheme.black,
-                  ),
-                ),
-                child: Text("12/02/2021"),
-              ),
-              Container(
-                width: 74 * w,
-                height: 46 * h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(16),
-                    bottomRight: Radius.circular(16),
-                  ),
-                  color: AppTheme.black,
-                ),
-                child: Center(
-                  child: SvgPicture.asset(
-                    "assets/icons/calendar.svg",
-                    width: 24,
-                    height: 24,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     SizedBox(width: 16 * w),
+          //     Expanded(
+          //       child: Text("Berish sanasi:"),
+          //     ),
+          //     Container(
+          //       width: 122,
+          //       height: 46,
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.only(
+          //           topLeft: Radius.circular(16),
+          //           bottomLeft: Radius.circular(16),
+          //         ),
+          //         border: Border.all(
+          //           width: 1,
+          //           color: AppTheme.black,
+          //         ),
+          //       ),
+          //       child: Text("12/02/2021"),
+          //     ),
+          //     Container(
+          //       width: 74 * w,
+          //       height: 46 * h,
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.only(
+          //           topRight: Radius.circular(16),
+          //           bottomRight: Radius.circular(16),
+          //         ),
+          //         color: AppTheme.black,
+          //       ),
+          //       child: Center(
+          //         child: SvgPicture.asset(
+          //           "assets/icons/calendar.svg",
+          //           width: 24,
+          //           height: 24,
+          //           fit: BoxFit.cover,
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           SizedBox(height: 16 * w),
-          Row(
-            children: [
-              SizedBox(
-                width: 16 * w,
-              ),
-              Expanded(
-                child: Text(
-                  "Telefonda sotildi",
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
-                    color: AppTheme.black,
-                  ),
-                ),
-              ),
-              Container(
-                width: 24 * w,
-                height: 24 * h,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                ),
-                child: Center(
-                  child: SvgPicture.asset(
-                    "asset/icons/tick_black.svg",
-                    width: 24,
-                    height: 24,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     SizedBox(
+          //       width: 16 * w,
+          //     ),
+          //     Expanded(
+          //       child: Text(
+          //         "Telefonda sotildi",
+          //         style: TextStyle(
+          //           fontFamily: 'Poppins',
+          //           fontWeight: FontWeight.w400,
+          //           fontSize: 16,
+          //           color: AppTheme.black,
+          //         ),
+          //       ),
+          //     ),
+          //     Container(
+          //       width: 24 * w,
+          //       height: 24 * h,
+          //       decoration: BoxDecoration(
+          //         color: Colors.transparent,
+          //       ),
+          //       child: Center(
+          //         child: SvgPicture.asset(
+          //           "asset/icons/tick_black.svg",
+          //           width: 24,
+          //           height: 24,
+          //           fit: BoxFit.cover,
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           SizedBox(height: 24 * w),
-          Row(
-            children: [
-              SizedBox(
-                width: 16 * w,
-              ),
-              Expanded(
-                child: Text(
-                  "Telefonda sotildi",
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
-                    color: AppTheme.black,
-                  ),
-                ),
-              ),
-              Container(
-                width: 24 * w,
-                height: 24 * h,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                ),
-                child: Center(
-                  child: SvgPicture.asset(
-                    "asset/icons/tick_black.svg",
-                    width: 24,
-                    height: 24,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     SizedBox(
+          //       width: 16 * w,
+          //     ),
+          //     Expanded(
+          //       child: Text(
+          //         "Telefonda sotildi",
+          //         style: TextStyle(
+          //           fontFamily: 'Poppins',
+          //           fontWeight: FontWeight.w400,
+          //           fontSize: 16,
+          //           color: AppTheme.black,
+          //         ),
+          //       ),
+          //     ),
+          //     Container(
+          //       width: 24 * w,
+          //       height: 24 * h,
+          //       decoration: BoxDecoration(
+          //         color: Colors.transparent,
+          //       ),
+          //       child: Center(
+          //         child: SvgPicture.asset(
+          //           "asset/icons/tick_black.svg",
+          //           width: 24,
+          //           height: 24,
+          //           fit: BoxFit.cover,
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           SizedBox(
             height: 24,
           ),
@@ -314,7 +318,7 @@ class _SallerSCState extends State<SallerScreenSale> {
                 ),
                 child: Center(
                   child: SvgPicture.asset(
-                    "asset/icons/plus.svg",
+                    "assets/icons/plus.svg",
                     width: 24,
                     height: 24,
                     fit: BoxFit.cover,

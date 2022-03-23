@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:holding_app/src/http_response/http_response.dart';
+import 'package:holding_app/src/model/api_models/Profile_api.dart';
 import 'package:http/http.dart ' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -101,5 +102,10 @@ class ApiProvider {
 
     String url = baseUrl + "/auth/register/";
     return await _postRequest(url, data);
+  }
+
+  Future<HttpResult> getCustomers() async {
+    String url = baseUrl + "/customers/";
+    return await _getRequest(url);
   }
 }

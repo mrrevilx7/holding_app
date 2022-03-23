@@ -17,7 +17,6 @@ class _NewsScreenState extends State<NewsScreen> {
     double h = Utils.getHeight(context);
     DateTime dateTime = DateTime.now();
     return Scaffold(
-      backgroundColor: AppTheme.white,
       body: SizedBox(
         height: 52 * h,
         child: ListView.builder(
@@ -40,7 +39,7 @@ class _NewsScreenState extends State<NewsScreen> {
                       color: Colors.black.withOpacity(0.25),
                       spreadRadius: 0,
                       blurRadius: 4,
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                       // changes position of shadow
                     ),
                   ],
@@ -56,9 +55,9 @@ class _NewsScreenState extends State<NewsScreen> {
                               left: 16 * w,
                               top: 8 * h,
                             ),
-                            child: Text(
+                            child: const Text(
                               "Holding1",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 15,
                                 fontFamily: 'Poppins',
@@ -92,7 +91,7 @@ class _NewsScreenState extends State<NewsScreen> {
                       margin: EdgeInsets.only(top: 12 * h),
                       width: double.infinity,
                       height: 160,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.transparent,
                       ),
                       child: Image.asset("assets/images/image_z.png"),
@@ -100,7 +99,7 @@ class _NewsScreenState extends State<NewsScreen> {
                     SizedBox(height: 10 * h),
                     Container(
                       margin: EdgeInsets.only(left: 12 * w),
-                      child: Text(
+                      child: const Text(
                         "Ishchi xodim kerak ( Sotuvchi, Qizlar kerak )",
                         style: TextStyle(
                           fontFamily: 'Poppins',
@@ -113,7 +112,7 @@ class _NewsScreenState extends State<NewsScreen> {
                     SizedBox(height: 14 * h),
                     Container(
                       margin: EdgeInsets.only(left: 12 * w),
-                      child: Text(
+                      child: const Text(
                         "I",
                         style: TextStyle(
                           fontFamily: 'Poppins',
