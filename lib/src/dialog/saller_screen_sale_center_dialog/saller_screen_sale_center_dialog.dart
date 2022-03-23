@@ -13,144 +13,218 @@ class CenterDialog {
     TextEditingController _dressPriceCon = TextEditingController();
     showDialog(
         context: context,
+        barrierColor: Colors.black.withOpacity(0.7),
         builder: (context) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: 18),
-              Center(
-                child: Text(
-                  "Ko’ylak kiritish oynasi",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    color: AppTheme.black,
-                  ),
-                ),
+          return Center(
+            child: Container(
+              margin: EdgeInsets.only(
+                left: 16,
+                right: 16,
               ),
-              Container(
-                margin: EdgeInsets.only(left: 16 * w, right: 16 * w),
-                width: double.infinity,
-                height: 56 * h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    width: 1,
-                    color: AppTheme.black,
-                  ),
-                ),
-                child: Row(
+              width: double.infinity,
+              height: 350 * h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+                color: Colors.white,
+              ),
+              child: Material(
+                borderRadius: BorderRadius.circular(24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Expanded(
-                      child: TextField(
-                        controller: _dressNameCon,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Ko’ylak  nomi',
-                          hintStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'Poppins',
-                            color: AppTheme.black.withOpacity(0.5),
-                          ),
+                    SizedBox(height: 18),
+                    Center(
+                      child: Text(
+                        "Ko’ylak kiritish oynasi",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
+                          fontFamily: 'Poppins',
+                          color: AppTheme.black,
                         ),
                       ),
                     ),
-                  ],
-                ),
-              ),
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                      left: 16 * w,
-                      top: 16 * h,
-                    ),
-                    width: 288 * w,
-                    height: 56 * h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(16),
-                        topRight: Radius.circular(16),
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 16 * w,
+                        right: 16 * w,
+                        top: 8 * h,
                       ),
-                      border: Border.all(
-                        width: 1,
-                        color: AppTheme.black,
+                      width: double.infinity,
+                      height: 56 * h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          width: 1,
+                          color: AppTheme.black,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.only(
+                                left: 12,
+                                top: 12,
+                              ),
+                              height: 40,
+                              width: MediaQuery.of(context).size.width - 100,
+                              child: TextField(
+                                keyboardType: TextInputType.number,
+                                controller: _dressNameCon,
+                                decoration: InputDecoration(
+                                  hintText: "Berilgan summa",
+                                  hintStyle: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppTheme.black.withOpacity(0.5),
+                                  ),
+                                  border: InputBorder.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    child: Row(
+                    Row(
                       children: [
-                        Expanded(
-                          child: TextField(
-                            controller: _dressNameCon,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: 'Ko’ylak  rasmi',
-                              hintStyle: TextStyle(
+                        Container(
+                          margin: EdgeInsets.only(
+                            left: 16 * w,
+                            top: 16 * h,
+                          ),
+                          width: 278 * w,
+                          height: 56 * h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(16),
+                              topLeft: Radius.circular(16),
+                            ),
+                            border: Border.all(
+                              width: 1,
+                              color: AppTheme.black,
+                            ),
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  margin: const EdgeInsets.only(
+                                    left: 12,
+                                    top: 12,
+                                  ),
+                                  height: 40,
+                                  width:
+                                      MediaQuery.of(context).size.width - 100,
+                                  child: TextField(
+                                    keyboardType: TextInputType.number,
+                                    controller: _dressNameCon,
+                                    decoration: InputDecoration(
+                                      hintText: "Berilgan summa",
+                                      hintStyle: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: AppTheme.black.withOpacity(0.5),
+                                      ),
+                                      border: InputBorder.none,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(
+                            right: 16 * w,
+                            top: 16 * h,
+                          ),
+                          width: 82 * w,
+                          height: 56 * h,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(16),
+                              topRight: Radius.circular(16),
+                            ),
+                            color: AppTheme.black,
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Files",
+                              style: TextStyle(
                                 fontSize: 16,
-                                fontWeight: FontWeight.w400,
                                 fontFamily: 'Poppins',
-                                color: AppTheme.black.withOpacity(0.5),
+                                fontWeight: FontWeight.w400,
+                                color: AppTheme.white,
                               ),
                             ),
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(
-                      right: 16 * w,
-                      top: 16 * h,
-                    ),
-                    width: 82 * w,
-                    height: 56 * h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(16),
-                        topRight: Radius.circular(16),
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 16 * w,
+                        right: 16 * w,
+                        top: 16,
                       ),
-                      color: AppTheme.black,
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Files",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.w400,
-                          color: AppTheme.white,
+                      width: double.infinity,
+                      height: 56 * h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          width: 1,
+                          color: AppTheme.black,
                         ),
                       ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.only(
+                                left: 12,
+                                top: 12,
+                              ),
+                              height: 40,
+                              width: MediaQuery.of(context).size.width - 100,
+                              child: TextField(
+                                keyboardType: TextInputType.number,
+                                controller: _dressNameCon,
+                                decoration: InputDecoration(
+                                  hintText: "Ko’ylak narxi",
+                                  hintStyle: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppTheme.black.withOpacity(0.5),
+                                  ),
+                                  border: InputBorder.none,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 16 * w, right: 16 * w),
-                width: double.infinity,
-                height: 56 * h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    width: 1,
-                    color: AppTheme.black,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: _dressNameCon,
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Ko’ylak narxi',
-                          hintStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
+                    SizedBox(height: 32 * h),
+                    Container(
+                      width: 152 * w,
+                      height: 43 * h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: AppTheme.black,
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Kiritish",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
                             fontFamily: 'Poppins',
-                            color: AppTheme.black.withOpacity(0.5),
+                            fontSize: 16,
+                            color: AppTheme.white,
                           ),
                         ),
                       ),
@@ -158,27 +232,7 @@ class CenterDialog {
                   ],
                 ),
               ),
-              SizedBox(height: 32 * h),
-              Container(
-                width: 152 * w,
-                height: 43 * h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: AppTheme.black,
-                ),
-                child: Center(
-                  child: Text(
-                    "Kiritish",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontFamily: 'Poppins',
-                      fontSize: 16,
-                      color: AppTheme.white,
-                    ),
-                  ),
-                ),
-              ),
-            ],
+            ),
           );
         });
   }

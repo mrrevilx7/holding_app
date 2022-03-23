@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/dialog/dialog.dart';
@@ -16,6 +18,7 @@ class SallerScreenSale extends StatefulWidget {
 
 class _SallerSCState extends State<SallerScreenSale> {
   final TextEditingController _priceCon = TextEditingController();
+  final TextEditingController _aboutdressCon = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +49,16 @@ class _SallerSCState extends State<SallerScreenSale> {
                 child: Row(
                   children: [
                     SizedBox(width: 12 * w),
-                    const Expanded(child: const Text("Ko’ylak  nomini tanlang")),
+                    const Expanded(
+                        child: Text(
+                      "Ko’ylak  nomini tanlang",
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: AppTheme.gray,
+                      ),
+                    )),
                     SvgPicture.asset(
                       "assets/icons/vector_top.svg",
                     ),
@@ -76,29 +88,33 @@ class _SallerSCState extends State<SallerScreenSale> {
               ),
             ],
           ),
-          Container(
-            margin: EdgeInsets.only(
-              top: 18 * h,
-              left: 16 * w,
-              right: 16 * w,
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 16,
+              right: 16,
+              top: 18,
             ),
-            decoration: BoxDecoration(
-              border: Border.all(
-                width: 1,
-                color: AppTheme.black,
-              ),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            width: double.infinity,
-            height: 70,
-            child: Container(
-              margin: EdgeInsets.only(
-                top: 10 * h,
-                left: 16 * w,
-              ),
-              child: const Text(
-                "Ko’ylak   haqida",
-              ),
+            child: TextFormField(
+              minLines: 2,
+              maxLines: 5,
+              keyboardType: TextInputType.multiline,
+              controller: _aboutdressCon,
+              decoration: InputDecoration(
+                  labelText: 'Ko’ylak   haqida',
+                  labelStyle: const TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    color: AppTheme.black,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: const BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16),
+                    borderSide: const BorderSide(color: Colors.black),
+                  )),
             ),
           ),
           Row(
@@ -119,12 +135,13 @@ class _SallerSCState extends State<SallerScreenSale> {
                       color: AppTheme.black,
                     )),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.only(
                           left: 12,
-                          top: 16,
+                          top: 14,
                         ),
                         height: 40,
                         width: MediaQuery.of(context).size.width - 100,
@@ -133,8 +150,8 @@ class _SallerSCState extends State<SallerScreenSale> {
                           controller: _priceCon,
                           decoration: const InputDecoration(
                             hintText: "Berilgan summa",
-                            hintStyle: const TextStyle(
-                              fontFamily: 'Manrope',
+                            hintStyle: TextStyle(
+                              fontFamily: 'Poppins',
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                               color: AppTheme.gray,
@@ -169,7 +186,7 @@ class _SallerSCState extends State<SallerScreenSale> {
                 ),
                 child: const Text(
                   " \$ 10000",
-                  style:  TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Poppins',
@@ -199,14 +216,14 @@ class _SallerSCState extends State<SallerScreenSale> {
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
-                    bottomLeft: const Radius.circular(16),
+                    bottomLeft: Radius.circular(16),
                   ),
                   border: Border.all(
                     width: 1,
                     color: AppTheme.black,
                   ),
                 ),
-                child: const Center(child: const Text("12/02/2021")),
+                child: const Center(child: Text("12/02/2021")),
               ),
               Container(
                 width: 74 * w,
@@ -215,7 +232,7 @@ class _SallerSCState extends State<SallerScreenSale> {
                   right: 16 * w,
                 ),
                 decoration: const BoxDecoration(
-                  borderRadius:  BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topRight: Radius.circular(16),
                     bottomRight: Radius.circular(16),
                   ),
@@ -341,7 +358,15 @@ class _SallerSCState extends State<SallerScreenSale> {
             child: Row(
               children: [
                 const SizedBox(width: 14),
-                const Text("Salonlar ro’yxati"),
+                const Text(
+                  "Salonlar ro’yxati",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: AppTheme.gray,
+                  ),
+                ),
                 const Spacer(),
                 SvgPicture.asset(
                   "assets/icons/vector_top.svg",
@@ -354,14 +379,22 @@ class _SallerSCState extends State<SallerScreenSale> {
           Row(
             children: [
               const SizedBox(width: 16),
-              const Text("Jo’natish sanasi:"),
-              const SizedBox(width: 36),
+              const Text(
+                "Jo’natish sanasi:",
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: AppTheme.black,
+                ),
+              ),
+              const Spacer(),
               Container(
-                width: 122,
-                height: 46,
+                width: 122 * w,
+                height: 46 * h,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.only(
-                    topLeft: const Radius.circular(16),
+                    topLeft: Radius.circular(16),
                     bottomLeft: Radius.circular(16),
                   ),
                   border: Border.all(
@@ -369,13 +402,16 @@ class _SallerSCState extends State<SallerScreenSale> {
                     color: AppTheme.black,
                   ),
                 ),
-                child: const Text("12/02/2021"),
+                child: const Center(child: Text("12/02/2021")),
               ),
               Container(
                 width: 74 * w,
                 height: 46 * h,
+                margin: EdgeInsets.only(
+                  right: 16 * w,
+                ),
                 decoration: const BoxDecoration(
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topRight: Radius.circular(16),
                     bottomRight: Radius.circular(16),
                   ),
@@ -398,34 +434,47 @@ class _SallerSCState extends State<SallerScreenSale> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 24,
-                height: 24,
+                width: 20,
+                height: 20,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
                     color: AppTheme.black,
                   ),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(3),
                 ),
               ),
               const SizedBox(
                 width: 18,
               ),
-              const Text("Yetkazib berish shart emas"),
+              const Text(
+                "Yetkazib berish shart emas",
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: AppTheme.black,
+                ),
+              ),
             ],
           ),
-          const SizedBox(height: 24),
-          Container(
-            width: 151 * w,
-            height: 43 * h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: AppTheme.black,
-            ),
-            child: const Center(
-              child: const Text(
-                "Saqlash",
-                style: const TextStyle(color: AppTheme.white),
+          Center(
+            child: Container(
+              margin: EdgeInsets.only(
+                top: 36 * h,
+                bottom: Platform.isIOS ? 32 : 24,
+              ),
+              width: 200 * w,
+              height: 56 * h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100),
+                color: AppTheme.black,
+              ),
+              child: const Center(
+                child: const Text(
+                  "Saqlash",
+                  style: const TextStyle(color: AppTheme.white),
+                ),
               ),
             ),
           ),
