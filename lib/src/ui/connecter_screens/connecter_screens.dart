@@ -81,7 +81,6 @@ class _ConnectScreenState extends State<ConnectScreen>
             ),
             child: TabBar(
               controller: _controller,
-              indicatorColor: Colors.transparent,
               labelColor: AppTheme.black,
               unselectedLabelColor: AppTheme.white,
               labelStyle: const TextStyle(

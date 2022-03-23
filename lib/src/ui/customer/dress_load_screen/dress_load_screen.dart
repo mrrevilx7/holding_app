@@ -31,7 +31,7 @@ class _DressLoadScreenState extends State<DressLoadScreen> {
                     'assets/images/dress_lady.jpg',
                   ),
                   fit: BoxFit.fill,
-                )),
+                ),),
           ),
           SizedBox(height: 40 * h),
           Row(

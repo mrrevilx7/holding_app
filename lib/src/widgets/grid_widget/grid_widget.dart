@@ -84,7 +84,7 @@ class InforGridWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
-                      "assets/icons/calendar.svg",
+                      "assets/icons/calendar_castumer.svg",
                       width: 15,
                       height: 15,
                     ),

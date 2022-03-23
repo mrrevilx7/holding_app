@@ -11,6 +11,7 @@ class ApiProvider {
   Future<HttpResult> _postRequest(String url, data) async {
     if (kDebugMode) {
       print(url);
+      print(data);
     }
     http.Response response = await http.post(
       Uri.parse(url),
@@ -38,7 +39,6 @@ class ApiProvider {
       );
     }
   }
-
 
   Future<HttpResult> _getRequest(String url) async {
     if (kDebugMode) {
@@ -91,7 +91,8 @@ class ApiProvider {
     return await _postRequest(url, data);
   }
 
-  Future<HttpResult> sendRegister(String user,  String phone, String pass) async {
+  Future<HttpResult> sendRegister(
+      String user, String phone, String pass) async {
     var data = {
       "username": user,
       "password": pass,
@@ -101,6 +102,4 @@ class ApiProvider {
     String url = baseUrl + "/auth/register/";
     return await _postRequest(url, data);
   }
-
-
 }
