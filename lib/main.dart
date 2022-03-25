@@ -3,7 +3,7 @@ import 'package:holding_app/src/ui/connecter_screens/connecter_screens.dart';
 import 'package:holding_app/src/ui/customer/news_screen/news_screen.dart';
 import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dart';
 import 'package:holding_app/src/ui/onboarding/onboarding_one/onboarding_one.dart';
-import 'package:holding_app/src/ui/seller/seller_screen/seller_screen.dart';
+import 'package:holding_app/src/ui/seller/seller_screen/seller_screen_fivety.dart';
 
 void main() {
   runApp(const MyApp());

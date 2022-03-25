@@ -1,23 +1,27 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/model/saller_screen_model/saller_screen_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
-import '../../../dialog/sallaer_screen_add_salon/sallaer_screen_add_salon.dart';
-import '../../../dialog/saller_screen_sale_center_dialog/saller_screen_sale_center_dialog.dart';
-import '../../../utils/utils_screen.dart';
+import 'package:holding_app/src/utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SallerScreenSale extends StatefulWidget {
-  const SallerScreenSale({Key? key}) : super(key: key);
+import '../../../dialog/sallaer_screen_add_salon/sallaer_screen_add_salon.dart';
+import '../../../dialog/saller_screen_sale_center_dialog/saller_screen_sale_center_dialog.dart';
+import '../saller_screen_buying/saller_screen_buying.dart';
+
+class FivetyScreen extends StatefulWidget {
+  const FivetyScreen({Key? key}) : super(key: key);
 
   @override
-  State<SallerScreenSale> createState() => _SallerSCState();
+  State<FivetyScreen> createState() => _FivetyScreenState();
 }
 
-class _SallerSCState extends State<SallerScreenSale> {
+class _FivetyScreenState extends State<FivetyScreen> {
   final TextEditingController _priceCon = TextEditingController();
   final TextEditingController _aboutdressCon = TextEditingController();
+  final TextEditingController _womenName = TextEditingController();
+  final TextEditingController _womenMoney = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,6 @@ class _SallerSCState extends State<SallerScreenSale> {
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.zero,
-        physics: const NeverScrollableScrollPhysics(),
         children: [
           SizedBox(height: 24 * h),
           Row(
@@ -116,6 +119,66 @@ class _SallerSCState extends State<SallerScreenSale> {
                   )),
             ),
           ),
+          Container(
+            margin: EdgeInsets.only(
+              left: 16 * w,
+              right: 16 * w,
+              top: 18 * h,
+            ),
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 16 * w),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                width: 1,
+                color: AppTheme.black,
+              ),
+            ),
+            child: TextField(
+              controller: _womenName,
+              decoration: const InputDecoration(
+                hintText: "Kelin ismi",
+                hintStyle: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: AppTheme.gray,
+                ),
+                border: InputBorder.none,
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(
+              left: 16 * w,
+              right: 16 * w,
+              top: 18 * h,
+            ),
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 16 * w),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                width: 1,
+                color: AppTheme.black,
+              ),
+            ),
+            child: TextField(
+              controller: _womenName,
+              decoration: const InputDecoration(
+                hintText: "Kelin  bergan pul",
+                hintStyle: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: AppTheme.gray,
+                ),
+                border: InputBorder.none,
+              ),
+            ),
+          ),
+
+
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,

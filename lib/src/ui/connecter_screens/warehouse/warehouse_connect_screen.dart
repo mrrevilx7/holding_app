@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../theme/app_theme.dart';
-import '../../utils/utils_screen.dart';
-import '../seller/ saller_screen_sale/seller_screen_sale.dart';
-import '../seller/seller_screen/seller_screen_fivety.dart';
+import '../../../theme/app_theme.dart';
+import '../../../utils/utils_screen.dart';
+import '../../warehouse/ware_house_work/ware_house_work.dart';
+import '../../warehouse/warehouse_room/warehouse_room.dart';
+import '../../warehouse/warhouse_product.dart';
 
 class ConnectScreen extends StatefulWidget {
   const ConnectScreen({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class _ConnectScreenState extends State<ConnectScreen>
               SizedBox(width: 16 * w),
               const Expanded(
                 child: Text(
-                  "Sotuvchi",
+                  "Omborchi",
                   style: TextStyle(
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w700,
@@ -99,13 +100,13 @@ class _ConnectScreenState extends State<ConnectScreen>
               ),
               tabs: const [
                 Tab(
-                  text: "All",
+                  text: "Qo’shish",
                 ),
                 Tab(
-                  text: "Sotish",
+                  text: "Maxsulot ",
                 ),
                 Tab(
-                  text: "50 / 50",
+                  text: "Ishlatish",
                 ),
               ],
             ),
@@ -114,9 +115,9 @@ class _ConnectScreenState extends State<ConnectScreen>
             child: TabBarView(
               controller: _controller,
               children: const [
-                FivetyScreen(),
-                SallerScreenSale(),
-                FivetyScreen(),
+                WarehouseScreen(),
+                ProductScreen(),
+                WorkHouseScreen(),
               ],
             ),
           ),

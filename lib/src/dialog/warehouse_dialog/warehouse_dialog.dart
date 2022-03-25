@@ -4,8 +4,8 @@ import 'package:holding_app/src/theme/app_theme.dart';
 
 import '../../utils/utils_screen.dart';
 
-class CenterDialog {
-  static void showSaleDialog(BuildContext context, index) {
+class CenterWarehouseDialog {
+  static void showWarehouseDialog(BuildContext context, index) {
     double w = Utils.getWidth(context);
     double h = Utils.getHeight(context);
     TextEditingController _dressNameCon = TextEditingController();
@@ -35,7 +35,7 @@ class CenterDialog {
                     const SizedBox(height: 18),
                     const Center(
                       child: Text(
-                        "Ko’ylak kiritish oynasi",
+                        "Yangi maxsulot  kiritish",
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
@@ -73,7 +73,7 @@ class CenterDialog {
                                 keyboardType: TextInputType.number,
                                 controller: _dressNameCon,
                                 decoration: InputDecoration(
-                                  hintText: "Berilgan summa",
+                                  hintText: "Maxsulot nomi",
                                   hintStyle: TextStyle(
                                     fontFamily: 'Poppins',
                                     fontSize: 16,
@@ -117,12 +117,12 @@ class CenterDialog {
                                   ),
                                   height: 40,
                                   width:
-                                      MediaQuery.of(context).size.width - 100,
+                                  MediaQuery.of(context).size.width - 100,
                                   child: TextField(
                                     keyboardType: TextInputType.number,
                                     controller: _dressNameCon,
                                     decoration: InputDecoration(
-                                      hintText: "Berilgan summa",
+                                      hintText: "Maxsulot rasmi",
                                       hintStyle: TextStyle(
                                         fontFamily: 'Poppins',
                                         fontSize: 16,
@@ -164,50 +164,6 @@ class CenterDialog {
                           ),
                         ),
                       ],
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(
-                        left: 16 * w,
-                        right: 16 * w,
-                        top: 16,
-                      ),
-                      width: double.infinity,
-                      height: 56 * h,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(
-                          width: 1,
-                          color: AppTheme.black,
-                        ),
-                      ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.only(
-                                left: 12,
-                                top: 12,
-                              ),
-                              height: 40,
-                              width: MediaQuery.of(context).size.width - 100,
-                              child: TextField(
-                                keyboardType: TextInputType.number,
-                                controller: _dressNameCon,
-                                decoration: InputDecoration(
-                                  hintText: "Ko’ylak narxi",
-                                  hintStyle: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppTheme.black.withOpacity(0.5),
-                                  ),
-                                  border: InputBorder.none,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
                     SizedBox(height: 32 * h),
                     Container(
