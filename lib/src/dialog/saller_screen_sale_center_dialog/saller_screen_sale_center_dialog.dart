@@ -32,8 +32,8 @@ class CenterDialog {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 18),
-                    Center(
+                    const SizedBox(height: 18),
+                    const Center(
                       child: Text(
                         "Ko’ylak kiritish oynasi",
                         style: TextStyle(

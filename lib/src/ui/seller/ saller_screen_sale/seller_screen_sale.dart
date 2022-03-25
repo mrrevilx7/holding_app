@@ -2,9 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:holding_app/src/dialog/dialog.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
-
+import '../../../dialog/sallaer_screen_add_salon/sallaer_screen_add_salon.dart';
 import '../../../dialog/saller_screen_sale_center_dialog/saller_screen_sale_center_dialog.dart';
 import '../../../utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -100,12 +99,12 @@ class _SallerSCState extends State<SallerScreenSale> {
               keyboardType: TextInputType.multiline,
               controller: _aboutdressCon,
               decoration: InputDecoration(
-                  labelText: 'Ko’ylak   haqida',
-                  labelStyle: const TextStyle(
+                  hintText: 'Ko’ylak   haqida',
+                  hintStyle: const TextStyle(
                     fontFamily: 'Poppins',
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: AppTheme.black,
+                    color: AppTheme.gray,
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
@@ -269,7 +268,7 @@ class _SallerSCState extends State<SallerScreenSale> {
               const Spacer(),
               Container(
                 margin: EdgeInsets.only(
-                  right: 16 * w,
+                  right: 36 * w,
                   top: 18 * h,
                 ),
                 width: 24 * w,
@@ -320,21 +319,26 @@ class _SallerSCState extends State<SallerScreenSale> {
                   ],
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.only(
-                  right: 16,
-                ),
-                width: 24 * w,
-                height: 24 * h,
-                decoration: const BoxDecoration(
-                  color: Colors.transparent,
-                ),
-                child: Center(
-                  child: SvgPicture.asset(
-                    "assets/icons/plus.svg",
-                    width: 24,
-                    height: 24,
-                    fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  CenterAddSalonDialog.showFivetyDialog(context, " ");
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(
+                    right: 36,
+                  ),
+                  width: 24 * w,
+                  height: 24 * h,
+                  decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                  ),
+                  child: Center(
+                    child: SvgPicture.asset(
+                      "assets/icons/plus.svg",
+                      width: 24,
+                      height: 24,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

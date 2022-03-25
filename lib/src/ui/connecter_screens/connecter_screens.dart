@@ -36,7 +36,7 @@ class _ConnectScreenState extends State<ConnectScreen>
               SizedBox(width: 16 * w),
               const Expanded(
                 child: Text(
-                  "Sotivchi",
+                  "Sotuvchi",
                   style: TextStyle(
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w700,
