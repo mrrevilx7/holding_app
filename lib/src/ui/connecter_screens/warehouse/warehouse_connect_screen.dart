@@ -5,14 +5,14 @@ import '../../warehouse/ware_house_work/ware_house_work.dart';
 import '../../warehouse/warehouse_room/warehouse_room.dart';
 import '../../warehouse/warhouse_product.dart';
 
-class ConnectScreen extends StatefulWidget {
-  const ConnectScreen({Key? key}) : super(key: key);
+class WarehouseConnectScreen extends StatefulWidget {
+  const WarehouseConnectScreen({Key? key}) : super(key: key);
 
   @override
-  State<ConnectScreen> createState() => _ConnectScreenState();
+  State<WarehouseConnectScreen> createState() => _WarehouseConnectScreenState();
 }
 
-class _ConnectScreenState extends State<ConnectScreen>
+class _WarehouseConnectScreenState extends State<WarehouseConnectScreen>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
   TextEditingController Statecontroller = TextEditingController();

@@ -10,14 +10,14 @@ import '../../../dialog/sallaer_screen_add_salon/sallaer_screen_add_salon.dart';
 import '../../../dialog/saller_screen_sale_center_dialog/saller_screen_sale_center_dialog.dart';
 import '../saller_screen_buying/saller_screen_buying.dart';
 
-class FivetyScreen extends StatefulWidget {
-  const FivetyScreen({Key? key}) : super(key: key);
+class BuyingScreen extends StatefulWidget {
+  const BuyingScreen({Key? key}) : super(key: key);
 
   @override
-  State<FivetyScreen> createState() => _FivetyScreenState();
+  State<BuyingScreen> createState() => _BuyingScreenState();
 }
 
-class _FivetyScreenState extends State<FivetyScreen> {
+class _BuyingScreenState extends State<BuyingScreen> {
   final TextEditingController _priceCon = TextEditingController();
   final TextEditingController _aboutdressCon = TextEditingController();
   final TextEditingController _womenName = TextEditingController();

@@ -222,7 +222,7 @@ class CenterAddSalonDialog {
                         ),
                         child: const Center(
                           child: Text(
-                            "Kiritish",
+                            "Saqlash",
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
                               fontFamily: 'Poppins',

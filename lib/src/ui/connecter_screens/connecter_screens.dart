@@ -114,9 +114,9 @@ class _ConnectScreenState extends State<ConnectScreen>
             child: TabBarView(
               controller: _controller,
               children: const [
-                FivetyScreen(),
+                BuyingScreen(),
                 SallerScreenSale(),
-                FivetyScreen(),
+                BuyingScreen(),
               ],
             ),
           ),
