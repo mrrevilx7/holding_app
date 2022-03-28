@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
+import '../../../dialog/delivery_center_dialog/delivery_center_dialog.dart';
 import '../../../theme/app_theme.dart';
 import '../../../utils/utils_screen.dart';
 
@@ -331,6 +334,63 @@ class _DeliveryAboutDressScreenState extends State<DeliveryAboutDressScreen> {
                 ),
               ],
             ),
+          ),
+          SizedBox(height: 24 * h),
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                  left: 16,
+                  bottom: Platform.isIOS ? 32 : 24,
+                ),
+                width: 151 * w,
+                height: 43 * h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: AppTheme.red,
+                ),
+                child: Center(
+                  child: Text(
+                    "Bekor qilindi",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.white,
+                    ),
+                  ),
+                ),
+              ),
+              Spacer(),
+              GestureDetector(
+                onTap: () {
+                  CenterDeliverDialog.showDeliveryDialog(context, " ");
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                    right: 16,
+                    bottom: Platform.isIOS ? 32 : 24,
+                  ),
+                  width: 151 * w,
+                  height: 43 * h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: AppTheme.lightGreen,
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Yetkazildi",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                        color: AppTheme.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
