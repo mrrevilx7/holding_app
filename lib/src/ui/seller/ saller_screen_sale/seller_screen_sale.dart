@@ -314,8 +314,8 @@ class _SallerSCState extends State<SallerScreenSale> {
                   CenterAddSalonDialog.showFivetyDialog(context, " ");
                 },
                 child: Container(
-                  margin: const EdgeInsets.only(
-                    right: 36,
+                  margin:  EdgeInsets.only(
+                    right: 36 * w,
                   ),
                   width: 24 * w,
                   height: 24 * h,

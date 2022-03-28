@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/dialog/warehouse_product_model/warehouse_product_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 
 import '../../utils/utils_screen.dart';
@@ -12,6 +13,128 @@ class ProductScreen extends StatefulWidget {
 }
 
 class _ProductScreenState extends State<ProductScreen> {
+  List<WarehouseModel> product = [
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yo'q",
+      long: "kg",
+      isSelected: false,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yo'q",
+      long: "kg",
+      isSelected: false,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yo'q",
+      long: "kg",
+      isSelected: false,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+    WarehouseModel(
+      image: "assets/images/product_1.png",
+      name: "Starbucks",
+      sroc: "Yaxshi",
+      long: "kg",
+      isSelected: true,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     double w = Utils.getWidth(context);
@@ -19,12 +142,15 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       body: ListView(
         children: [
-          SizedBox(height: 32 * h),
           Row(
             children: [
-              SizedBox(width: 16 * w),
+              SizedBox(
+                width: 16 * w,
+              ),
               const Text(
                 "Rasm",
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'Poppins',
@@ -32,30 +158,34 @@ class _ProductScreenState extends State<ProductScreen> {
                   color: AppTheme.black,
                 ),
               ),
-              SizedBox(width: 16),
+              SizedBox(width: 14 * w),
               Text(
                 "Maxsulot nomi",
-                style: TextStyle(
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
                   fontSize: 14,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w400,
                   color: AppTheme.black,
                 ),
               ),
+              Spacer(),
               Container(
-                width: 60 * w,
-                height: 20 * h,
+                width: 60,
+                height: 20,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4),
                   border: Border.all(
+                    width: 1,
                     color: AppTheme.lightGreen,
                   ),
+                  borderRadius: BorderRadius.circular(4),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Xolati",
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w400,
                       fontFamily: 'Poppins',
                       fontSize: 12,
                       color: AppTheme.lightGreen,
@@ -63,7 +193,134 @@ class _ProductScreenState extends State<ProductScreen> {
                   ),
                 ),
               ),
+              SizedBox(width: 36 * w),
+              const Text(
+                "Miqdori",
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Poppins',
+                  fontSize: 12,
+                  color: AppTheme.black,
+                ),
+              ),
+              SizedBox(width: 16 * w),
             ],
+          ),
+          Container(
+            margin: EdgeInsets.only(
+              left: 16,
+              right: 16,
+              top: 6,
+            ),
+            width: double.infinity,
+            height: 1,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 1,
+                color: AppTheme.gray,
+              ),
+            ),
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: product.length,
+            itemBuilder: (BuildContext context, index) {
+              return Column(
+                children: [
+                  SizedBox(height: 12 * h),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 16 * w,
+                      ),
+                      Container(
+                        width: 48 * w,
+                        height: 48 * h,
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            product[index].image,
+                            width: 48,
+                            height: 48,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 12 * w),
+                      Text(
+                        product[index].name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          color: AppTheme.black,
+                        ),
+                      ),
+                      Spacer(),
+                      Container(
+                        width: 60,
+                        height: 20,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 1,
+                            color: product[index].isSelected
+                                ? AppTheme.lightGreen
+                                : AppTheme.red,
+                          ),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Center(
+                          child: Text(
+                            product[index].sroc,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Poppins',
+                              fontSize: 12,
+                              color: product[index].isSelected
+                                  ? AppTheme.lightGreen
+                                  : AppTheme.red,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 68 * w),
+                      Text(
+                        product[index].long,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Poppins',
+                          fontSize: 12,
+                          color: AppTheme.black,
+                        ),
+                      ),
+                      SizedBox(width: 16 * w),
+                    ],
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 16,
+                      right: 16,
+                      top: 2,
+                    ),
+                    width: double.infinity,
+                    height: 1,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 1,
+                        color: AppTheme.gray,
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),

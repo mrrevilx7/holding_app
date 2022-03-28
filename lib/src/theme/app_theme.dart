@@ -18,6 +18,7 @@ class AppTheme {
   static const Color levender  = Color(0xFFF6F5FB);
   static const Color levenderRed  = Color(0xFFFFF4F4);
   static const Color lightRed  = Color(0xFFFF5648);
+  static const Color red  = Color(0xFFDB303F);
   static const Color lightBlue  = Color(0xFF5A6CF3);
   static const Color darkGray  = Color(0xFF7A7A7A);
 

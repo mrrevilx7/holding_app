@@ -3,8 +3,9 @@ import 'package:holding_app/src/ui/connecter_screens/connecter_screens.dart';
 import 'package:holding_app/src/ui/connecter_screens/warehouse/warehouse_connect_screen.dart';
 import 'package:holding_app/src/ui/customer/news_screen/news_screen.dart';
 import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dart';
+import 'package:holding_app/src/ui/delivery/delivery.dart';
 import 'package:holding_app/src/ui/onboarding/onboarding_one/onboarding_one.dart';
-import 'package:holding_app/src/ui/seller/seller_screen/seller_screen_fivety.dart';
+import 'package:holding_app/src/ui/seller/seller_screen/seller_screen_buy.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const WarehouseConnectScreen(),
+      home: const DeliveryScreen(),
       //ProfileScreen(),
       //NewsScreen(),
       //OnboardingOneScreen(),

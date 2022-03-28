@@ -12,7 +12,7 @@ import '../../connecter_screens/connecter_screens.dart';
 import '../../delivery/delivery.dart';
 import '../../director/director_screen.dart';
 import '../../manager/manager_screen.dart';
-import '../../seller/seller_screen/seller_screen_fivety.dart';
+import '../../seller/seller_screen/seller_screen_buy.dart';
 import '../../warehouse/warehouse_room/warehouse_room.dart';
 import '../forgot_password/forgot_password_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
