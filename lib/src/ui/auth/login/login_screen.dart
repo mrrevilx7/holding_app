@@ -9,10 +9,9 @@ import '../../../dialog/dialog.dart';
 import '../../../repository/repository.dart';
 import '../../../utils/utils_screen.dart';
 import '../../connecter_screens/connecter_screens.dart';
+import '../../connecter_screens/manager_connect_screen/manager_connect_screen.dart';
 import '../../delivery/delivery.dart';
 import '../../director/director_screen.dart';
-import '../../manager/manager_screen.dart';
-import '../../seller/seller_screen/seller_screen_buy.dart';
 import '../../warehouse/warehouse_room/warehouse_room.dart';
 import '../forgot_password/forgot_password_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -431,7 +430,7 @@ class _LoginScreenState extends State<LoginScreen> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const ManagerScreen();
+              return const ConnectManagerScreen();
             },
           ),
         );

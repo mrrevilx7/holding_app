@@ -303,8 +303,7 @@ class _DeliveryAboutDressScreenState extends State<DeliveryAboutDressScreen> {
                     top: 18,
                   ),
                   child: TextFormField(
-                    minLines: 2,
-                    maxLines: 5,
+                    maxLines: 3,
                     keyboardType: TextInputType.multiline,
                     controller: _aboutdressCon,
                     decoration: const InputDecoration(

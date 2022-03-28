@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/ui/connecter_screens/connecter_screens.dart';
+import 'package:holding_app/src/ui/connecter_screens/manager_connect_screen/manager_connect_screen.dart';
 import 'package:holding_app/src/ui/connecter_screens/warehouse/warehouse_connect_screen.dart';
 import 'package:holding_app/src/ui/customer/news_screen/news_screen.dart';
 import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dart';
@@ -23,9 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const DeliveryScreen(),
-      //ProfileScreen(),
-      //NewsScreen(),
+      home: const ConnectManagerScreen(),
       //OnboardingOneScreen(),
     );
   }
