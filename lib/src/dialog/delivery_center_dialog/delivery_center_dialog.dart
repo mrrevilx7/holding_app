@@ -39,7 +39,7 @@ class CenterDeliverDialog {
                       ),
                     ),
                   ),
-                  SizedBox(height: 18),
+                  const SizedBox(height: 18),
                   Row(
                     children: [
                       GestureDetector(
@@ -70,14 +70,14 @@ class CenterDeliverDialog {
                           ),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       GestureDetector(
                         onTap: () {
                           Navigator.pop(context);
                         },
                         child: Container(
                           margin: EdgeInsets.only(
-                            right: 16,
+                            right: 16 * w,
                           ),
                           width: 151 * w,
                           height: 43 * h,
@@ -85,7 +85,7 @@ class CenterDeliverDialog {
                             borderRadius: BorderRadius.circular(100),
                             color: AppTheme.lightGreen,
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Xa",
                               style: TextStyle(
