@@ -14,9 +14,9 @@ class CenterDeliverDialog {
         builder: (context) {
           return Center(
             child: Container(
-              margin: const EdgeInsets.only(
-                left: 16,
-                right: 16,
+              margin:  EdgeInsets.only(
+                left: 16 * w,
+                right: 16 * h,
               ),
               width: double.infinity,
               height: 120 * h,
@@ -47,8 +47,8 @@ class CenterDeliverDialog {
                           Navigator.pop(context);
                         },
                         child: Container(
-                          margin: const EdgeInsets.only(
-                            left: 16,
+                          margin:  EdgeInsets.only(
+                            left: 16 * w,
                           ),
                           width: 151 * w,
                           height: 43 * h,
