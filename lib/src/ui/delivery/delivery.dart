@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/dialog/delivery_screen_model/delivery_screen_model.dart';
+import 'package:holding_app/src/ui/delivery/delivery_about_screen/delivery_about_screen.dart';
 
 import '../../theme/app_theme.dart';
 import '../../utils/utils_screen.dart';
@@ -249,7 +250,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const BuyingScreen();
+                                  return const DeliveryAboutDressScreen();
                                 },
                               ),
                             );
