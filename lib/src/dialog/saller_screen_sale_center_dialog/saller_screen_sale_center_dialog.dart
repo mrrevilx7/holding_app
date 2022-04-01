@@ -73,7 +73,7 @@ class CenterDialog {
                                 keyboardType: TextInputType.number,
                                 controller: _dressNameCon,
                                 decoration: InputDecoration(
-                                  hintText: "Berilgan summa",
+                                  hintText: "Ko’ylak  nomi",
                                   hintStyle: TextStyle(
                                     fontFamily: 'Poppins',
                                     fontSize: 16,
@@ -120,9 +120,9 @@ class CenterDialog {
                                       MediaQuery.of(context).size.width - 100,
                                   child: TextField(
                                     keyboardType: TextInputType.number,
-                                    controller: _dressNameCon,
+                                    controller: _dressImageCon,
                                     decoration: InputDecoration(
-                                      hintText: "Berilgan summa",
+                                      hintText: "Ko’ylak rasmi",
                                       hintStyle: TextStyle(
                                         fontFamily: 'Poppins',
                                         fontSize: 16,
@@ -192,7 +192,7 @@ class CenterDialog {
                               width: MediaQuery.of(context).size.width - 100,
                               child: TextField(
                                 keyboardType: TextInputType.number,
-                                controller: _dressNameCon,
+                                controller: _dressPriceCon,
                                 decoration: InputDecoration(
                                   hintText: "Ko’ylak narxi",
                                   hintStyle: TextStyle(

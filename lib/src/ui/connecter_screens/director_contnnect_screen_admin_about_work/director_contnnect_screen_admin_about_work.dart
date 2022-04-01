@@ -6,18 +6,17 @@ import '../../../utils/utils_screen.dart';
 import '../../manager/prochi_screen/prochi_screen.dart';
 import '../../manager/serio_screen/serio_screen.dart';
 
-class ConnectManagerScreen extends StatefulWidget {
-  const ConnectManagerScreen({Key? key}) : super(key: key);
+class DeliveryManagerScreen extends StatefulWidget {
+  const DeliveryManagerScreen({Key? key}) : super(key: key);
 
   @override
-  State<ConnectManagerScreen> createState() => _ConnectManagerScreenState();
+  State<DeliveryManagerScreen> createState() => _DeliveryManagerScreenState();
 }
 
-class _ConnectManagerScreenState extends State<ConnectManagerScreen>
+class _DeliveryManagerScreenState extends State<DeliveryManagerScreen>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
   TextEditingController Statecontroller = TextEditingController();
-  bool _isSelected = false;
 
   @override
   void initState() {

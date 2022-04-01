@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:holding_app/src/dialog/warehouse_product_model/warehouse_product_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 
+import '../../model/warehouse_product_model/warehouse_product_model.dart';
 import '../../utils/utils_screen.dart';
 
 class ProductScreen extends StatefulWidget {

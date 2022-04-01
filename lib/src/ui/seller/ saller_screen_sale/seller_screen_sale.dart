@@ -8,7 +8,7 @@ import '../../../dialog/saller_screen_sale_center_dialog/saller_screen_sale_cent
 import '../../../utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SallerScreenSale extends StatefulWidget {
+  class SallerScreenSale extends StatefulWidget {
   const SallerScreenSale({Key? key}) : super(key: key);
 
   @override

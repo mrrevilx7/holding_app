@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:holding_app/src/dialog/delivery_screen_model/delivery_screen_model.dart';
 import 'package:holding_app/src/ui/delivery/delivery_about_screen/delivery_about_screen.dart';
 
+import '../../model/delivery_screen_model/delivery_screen_model.dart';
 import '../../theme/app_theme.dart';
 import '../../utils/utils_screen.dart';
 import '../seller/saller_screen_buying/saller_screen_buying.dart';
@@ -236,7 +236,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Roboto',
-                                    color: AppTheme.lightYellow,
+                                    color: AppTheme.Yellow,
                                   ),
                                 ),
                               ],

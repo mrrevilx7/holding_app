@@ -4,6 +4,8 @@ import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:holding_app/src/utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../saller_screen_buying/saller_screen_buying.dart';
+
 class BuyingScreen extends StatefulWidget {
   const BuyingScreen({Key? key}) : super(key: key);
 
@@ -161,7 +163,7 @@ class _BuyingScreenState extends State<BuyingScreen> {
                                   fontSize: 10,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Roboto',
-                                  color: AppTheme.lightYellow,
+                                  color: AppTheme.Yellow,
                                 ),
                               ),
                             ],
@@ -175,7 +177,7 @@ class _BuyingScreenState extends State<BuyingScreen> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const BuyingScreen();
+                                return const BuyingIdScreen();
                               },
                             ),
                           );
@@ -304,7 +306,7 @@ class _BuyingScreenState extends State<BuyingScreen> {
                                   fontSize: 10,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Roboto',
-                                  color: AppTheme.lightYellow,
+                                  color: AppTheme.Yellow,
                                 ),
                               ),
                             ],

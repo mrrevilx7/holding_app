@@ -192,8 +192,7 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
               top: 24,
             ),
             child: TextFormField(
-              minLines: 2,
-              maxLines: 5,
+              maxLines: 4,
               keyboardType: TextInputType.multiline,
               controller: _inforCon,
               decoration: InputDecoration(

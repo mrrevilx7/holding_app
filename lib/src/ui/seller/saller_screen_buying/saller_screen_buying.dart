@@ -3,20 +3,21 @@ import 'package:flutter/material.dart';
 import '../../../theme/app_theme.dart';
 import '../../../utils/utils_screen.dart';
 
-class BuyingScreen extends StatefulWidget {
-  const BuyingScreen({Key? key}) : super(key: key);
+class BuyingIdScreen extends StatefulWidget {
+  const BuyingIdScreen({Key? key}) : super(key: key);
 
   @override
-  State<BuyingScreen> createState() => _BuyingScreenState();
+  State<BuyingIdScreen> createState() => _BuyingIdScreenState();
 }
 
-class _BuyingScreenState extends State<BuyingScreen> {
+class _BuyingIdScreenState extends State<BuyingIdScreen> {
   @override
   Widget build(BuildContext context) {
     double w = Utils.getWidth(context);
     double h = Utils.getWidth(context);
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 40 * h),
           Row(
@@ -54,9 +55,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36 * w,
+              left: 24 * w,
               top: 40 * h,
-              right: 36 * h,
+              right: 24 * h,
             ),
             width: double.infinity,
             height: 272,
@@ -101,9 +102,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36,
+              left:  16 * w,
               top: 1,
-              right: 36,
+              right:  16 * w,
             ),
             height: 1,
             width: double.infinity,
@@ -144,9 +145,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36,
+              left: 16 * w,
               top: 1,
-              right: 36,
+              right:  16 * w,
             ),
             height: 1,
             width: double.infinity,
@@ -187,9 +188,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36,
+              left:  16 * w,
               top: 1,
-              right: 36,
+              right:  16 * w,
             ),
             height: 1,
             width: double.infinity,
@@ -230,9 +231,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36,
+              left:  16 * w,
               top: 1,
-              right: 36,
+              right:  16 * w,
             ),
             height: 1,
             width: double.infinity,
@@ -273,9 +274,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36,
+              left:  16 * w,
               top: 1,
-              right: 36,
+              right:  16 * w,
             ),
             height: 1,
             width: double.infinity,
@@ -316,9 +317,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36,
+              left:  16 * w,
               top: 1,
-              right: 36,
+              right:  16 * w,
             ),
             height: 1,
             width: double.infinity,
@@ -359,9 +360,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36,
+              left:  16 * w,
               top: 1,
-              right: 36,
+              right:  16 * w,
             ),
             height: 1,
             width: double.infinity,
@@ -445,9 +446,9 @@ class _BuyingScreenState extends State<BuyingScreen> {
           ),
           Container(
             margin: EdgeInsets.only(
-              left: 36,
+              left:  16 * w,
               top: 1,
-              right: 36,
+              right:  16 * w,
             ),
             height: 1,
             width: double.infinity,
