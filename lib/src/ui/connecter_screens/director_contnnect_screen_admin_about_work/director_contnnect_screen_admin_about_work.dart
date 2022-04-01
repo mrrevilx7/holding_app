@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:holding_app/src/ui/manager/about_holding_one_screen/about_holding_one_screen.dart';
 import '../../../theme/app_theme.dart';
 import '../../../utils/utils_screen.dart';
+import '../../director/about_cost/about_cost.dart';
+import '../../director/about_work/about_work.dart';
 import '../../manager/prochi_screen/prochi_screen.dart';
 import '../../manager/serio_screen/serio_screen.dart';
 
-class DeliveryManagerScreen extends StatefulWidget {
-  const DeliveryManagerScreen({Key? key}) : super(key: key);
+class DirectorManagerScreen extends StatefulWidget {
+  const DirectorManagerScreen({Key? key}) : super(key: key);
 
   @override
-  State<DeliveryManagerScreen> createState() => _DeliveryManagerScreenState();
+  State<DirectorManagerScreen> createState() => _DirectorManagerScreenState();
 }
 
-class _DeliveryManagerScreenState extends State<DeliveryManagerScreen>
+class _DirectorManagerScreenState extends State<DirectorManagerScreen>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
   TextEditingController Statecontroller = TextEditingController();
@@ -106,10 +108,10 @@ class _DeliveryManagerScreenState extends State<DeliveryManagerScreen>
               ),
               tabs: const [
                 Tab(
-                  text: "SERIO",
+                  text: "Ish haqida",
                 ),
                 Tab(
-                  text: "Prochi",
+                  text: "Xarajatlar",
                 ),
               ],
             ),
@@ -118,8 +120,8 @@ class _DeliveryManagerScreenState extends State<DeliveryManagerScreen>
             child: TabBarView(
               controller: _controller,
               children: const [
-                SerioScreen(),
-                ProchiScreen(),
+                AboutWorkScreen(),
+                AboutCost(),
               ],
             ),
           ),
