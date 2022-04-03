@@ -1,24 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/ui/manager/about_holding_one_screen/about_holding_one_screen.dart';
-import '../../../theme/app_theme.dart';
-import '../../../utils/utils_screen.dart';
-import '../../director/about_cost/about_cost.dart';
-import '../../director/about_work/about_work.dart';
-import '../../manager/prochi_screen/prochi_screen.dart';
-import '../../manager/serio_screen/serio_screen.dart';
+import '../../../../theme/app_theme.dart';
+import '../../../../utils/utils_screen.dart';
+import '../../../director/warehouser_manager/meters_screen/meters_screen.dart';
+import '../../../director/warehouser_manager/suddenly_screen/suddenly_screen.dart';
 
-class DirectorManagerScreen extends StatefulWidget {
-  const DirectorManagerScreen({Key? key}) : super(key: key);
+class WareHouseManagerScreen extends StatefulWidget {
+  const WareHouseManagerScreen({Key? key}) : super(key: key);
 
   @override
-  State<DirectorManagerScreen> createState() => _DirectorManagerScreenState();
+  State<WareHouseManagerScreen> createState() => _WareHouseManagerScreenState();
 }
 
-class _DirectorManagerScreenState extends State<DirectorManagerScreen>
+class _WareHouseManagerScreenState extends State<WareHouseManagerScreen>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
   TextEditingController Statecontroller = TextEditingController();
+  bool _isSelected = false;
 
   @override
   void initState() {
@@ -39,16 +38,6 @@ class _DirectorManagerScreenState extends State<DirectorManagerScreen>
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              SizedBox(width: 16 * w),
-              const Text(
-                "Asosiy sahifa",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.bold,
-                  color: AppTheme.black,
-                ),
-              ),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -118,10 +107,10 @@ class _DirectorManagerScreenState extends State<DirectorManagerScreen>
               ),
               tabs: const [
                 Tab(
-                  text: "Ish haqida",
+                  text: "Donalik",
                 ),
                 Tab(
-                  text: "Xarajatlar",
+                  text: "Metrlik",
                 ),
               ],
             ),
@@ -130,8 +119,8 @@ class _DirectorManagerScreenState extends State<DirectorManagerScreen>
             child: TabBarView(
               controller: _controller,
               children: const [
-                AboutWorkScreen(),
-                AboutCostScreen(),
+                SuddenlyScreen(),
+                MetersScreen(),
               ],
             ),
           ),

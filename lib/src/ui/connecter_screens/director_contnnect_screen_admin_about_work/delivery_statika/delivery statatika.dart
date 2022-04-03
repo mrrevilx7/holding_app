@@ -153,7 +153,7 @@ class _DeliveryStatikaState extends State<DeliveryStatika> {
               itemBuilder: (_, i) {
                 return Container(
                   margin: EdgeInsets.only(
-                    top: 6 * h,
+                    top: 12 * h,
                   ),
                   width: double.infinity,
                   height: 64 * h,
