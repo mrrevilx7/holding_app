@@ -268,7 +268,7 @@ class _DeliveryStatikaState extends State<DeliveryStatika> {
                 animationDuration: const Duration(milliseconds: 1000),
                 gradientList: gradientList,
                 // chartType: ChartType.ring,
-                emptyColorGradient: [
+                emptyColorGradient: const [
                   AppTheme.circleGreen,
                   AppTheme.circleGreen,
                 ],
