@@ -237,7 +237,7 @@ class _DeliveryStatikaState extends State<DeliveryStatika> {
                         child: Container(
                           width: 24 * w,
                           height: 24 * w,
-                          margin: EdgeInsets.only(right: 16),
+                          margin: const EdgeInsets.only(right: 16),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(24),
                           ),
@@ -273,7 +273,7 @@ class _DeliveryStatikaState extends State<DeliveryStatika> {
                   AppTheme.circleGreen,
                 ],
                 chartLegendSpacing: 32,
-                chartRadius: MediaQuery.of(context).size.width / 1.2,
+                chartRadius: MediaQuery.of(context).size.width / 1.5,
                 legendOptions: const LegendOptions(
                   showLegendsInRow: true,
                   legendPosition: LegendPosition.bottom,
