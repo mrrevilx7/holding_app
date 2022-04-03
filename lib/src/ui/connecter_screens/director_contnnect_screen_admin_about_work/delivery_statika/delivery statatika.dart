@@ -265,7 +265,7 @@ class _DeliveryStatikaState extends State<DeliveryStatika> {
             child: Center(
               child: PieChart(
                 dataMap: dataMap,
-                animationDuration: Duration(milliseconds: 1000),
+                animationDuration: const Duration(milliseconds: 1000),
                 gradientList: gradientList,
                 // chartType: ChartType.ring,
                 emptyColorGradient: [
