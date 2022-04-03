@@ -33,7 +33,7 @@ class _SuddenlyScreenState extends State<SuddenlyScreen> {
               ),
               const Spacer(),
               const Text(
-                "Jami turdagi maxsulotlar :",
+                "400",
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontFamily: 'Roboto',
@@ -42,6 +42,36 @@ class _SuddenlyScreenState extends State<SuddenlyScreen> {
                 ),
               ),
               SizedBox(width: 16 * w),
+            ],
+          ),
+          SizedBox(height: 24 * h),
+          Row(
+            children: [
+              SizedBox(
+                width: 16 * w,
+              ),
+              const Text(
+                "Jami turdagi maxsulotlar :",
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Roboto',
+                  fontSize: 16,
+                  color: AppTheme.black,
+                ),
+              ),
+              const Spacer(),
+              const Text(
+                "Metr",
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Roboto',
+                  fontSize: 16,
+                  color: AppTheme.black,
+                ),
+              ),
+              SizedBox(
+                width: 16 * w,
+              ),
             ],
           ),
         ],
