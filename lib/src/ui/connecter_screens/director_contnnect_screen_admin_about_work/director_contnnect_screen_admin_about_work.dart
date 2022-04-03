@@ -121,7 +121,7 @@ class _DirectorManagerScreenState extends State<DirectorManagerScreen>
               controller: _controller,
               children: const [
                 AboutWorkScreen(),
-                AboutCost(),
+                AboutCostScreen(),
               ],
             ),
           ),

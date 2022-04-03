@@ -236,7 +236,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Roboto',
-                                    color: AppTheme.Yellow,
+                                    color: AppTheme.yellow,
                                   ),
                                 ),
                               ],
