@@ -34,37 +34,37 @@ class _WareHouseManagerScreenState extends State<WareHouseManagerScreen>
       body: Column(
         children: [
           SizedBox(height: 68 * h),
+          SizedBox(width: 16 * w),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const HoldingScreen();
-                      },
-                    ),
-                  );
-                },
-                child: Container(
-                  width: 60 * w,
-                  height: 60 * w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(60),
-                    color: Colors.transparent,
-                  ),
-                  child: Center(
-                    child: Hero(
-                      tag: "prep",
-                      child: Image.asset(
-                        "assets/images/mexico_girl.png",
-                        width: 60,
-                        height: 60,
-                        fit: BoxFit.cover,
-                      ),
+              SizedBox(width: 16 * w),
+              const Text(
+                "Ombor",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.bold,
+                  color: AppTheme.black,
+                ),
+              ),
+              const Spacer(),
+              Container(
+                width: 60 * w,
+                height: 60 * w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(60),
+                  color: Colors.transparent,
+                ),
+                child: Center(
+                  child: Hero(
+                    tag: "prep",
+                    child: Image.asset(
+                      "assets/images/mexico_girl.png",
+                      width: 60,
+                      height: 60,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -72,6 +72,7 @@ class _WareHouseManagerScreenState extends State<WareHouseManagerScreen>
               SizedBox(width: 16 * w),
             ],
           ),
+          SizedBox(width: 16 * w),
           Container(
             margin: EdgeInsets.only(
               top: 16 * h,
