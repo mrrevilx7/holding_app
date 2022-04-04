@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../../model/delivery_screen_model/delivery_screen_model.dart';
-import '../../../../theme/app_theme.dart';
-import '../../../../utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pie_chart/pie_chart.dart';
+
+import '../../../model/delivery_screen_model/delivery_screen_model.dart';
+import '../../../theme/app_theme.dart';
+import '../../../utils/utils_screen.dart';
 
 class DeliveryStatika extends StatefulWidget {
   const DeliveryStatika({Key? key}) : super(key: key);

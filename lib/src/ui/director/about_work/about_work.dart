@@ -79,102 +79,106 @@ class _AboutWorkScreenState extends State<AboutWorkScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                margin: EdgeInsets.only(
-                  left: 16 * w,
-                  top: 24 * h,
-                ),
-                width: 120 * w,
-                height: 136 * h,
-                decoration: BoxDecoration(
-                  color: AppTheme.holding1,
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(63),
-                    topLeft: Radius.circular(16),
-                    bottomLeft: Radius.circular(16),
-                    bottomRight: Radius.circular(16),
+              GestureDetector(
+                onTap: () {
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                    left: 16 * w,
+                    top: 24 * h,
                   ),
-                  border: Border.all(
-                    width: 1,
-                    color: AppTheme.white,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppTheme.holding1.withOpacity(0.5),
-                      spreadRadius: 4,
-                      blurRadius: 3,
-                      offset: Offset.zero, // changes position of shadow
+                  width: 120 * w,
+                  height: 136 * h,
+                  decoration: BoxDecoration(
+                    color: AppTheme.holding1,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(63),
+                      topLeft: Radius.circular(16),
+                      bottomLeft: Radius.circular(16),
+                      bottomRight: Radius.circular(16),
                     ),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(
-                        left: 8 * w,
-                        top: 8 * h,
+                    border: Border.all(
+                      width: 1,
+                      color: AppTheme.white,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppTheme.holding1.withOpacity(0.5),
+                        spreadRadius: 4,
+                        blurRadius: 3,
+                        offset: Offset.zero, // changes position of shadow
                       ),
-                      width: 52 * w,
-                      height: 52 * w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(52),
-                        color: AppTheme.white,
-                        border: Border.all(
-                          width: 3,
-                          color: AppTheme.holdingOne,
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(
+                          left: 8 * w,
+                          top: 8 * h,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppTheme.holdingOne.withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
+                        width: 52 * w,
+                        height: 52 * w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(52),
+                          color: AppTheme.white,
+                          border: Border.all(
+                            width: 3,
+                            color: AppTheme.holdingOne,
                           ),
-                        ],
-                      ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          "assets/icons/question.svg",
-                          width: 16 * w,
-                          height: 16 * w,
-                          fit: BoxFit.cover,
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppTheme.holdingOne.withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: SvgPicture.asset(
+                            "assets/icons/question.svg",
+                            width: 16 * w,
+                            height: 16 * w,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(
-                        left: 8 * w,
-                        top: 12 * h,
-                      ),
-                      child: const Text(
-                        "Holding1",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontFamily: 'Poppins',
-                          fontSize: 16,
-                          color: AppTheme.violetDark,
+                      Container(
+                        margin: EdgeInsets.only(
+                          left: 8 * w,
+                          top: 12 * h,
+                        ),
+                        child: const Text(
+                          "Holding1",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontFamily: 'Poppins',
+                            fontSize: 16,
+                            color: AppTheme.violetDark,
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(
-                        left: 8 * w,
-                        top: 2 * h,
-                      ),
-                      child: const Text(
-                        "Wedding salon",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Poppins',
-                          fontSize: 12,
-                          color: AppTheme.darkGray,
+                      Container(
+                        margin: EdgeInsets.only(
+                          left: 8 * w,
+                          top: 2 * h,
+                        ),
+                        child: const Text(
+                          "Wedding salon",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Poppins',
+                            fontSize: 12,
+                            color: AppTheme.darkGray,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Container(
