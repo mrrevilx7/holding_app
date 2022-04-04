@@ -445,7 +445,7 @@ class _AboutCostScreenState extends State<AboutCostScreen> {
               borderRadius: BorderRadius.circular(100),
               color: AppTheme.black,
             ),
-            child: Center(
+            child: const Center(
               child: Text(
                 "Xarajat qo’shish",
                 style: TextStyle(

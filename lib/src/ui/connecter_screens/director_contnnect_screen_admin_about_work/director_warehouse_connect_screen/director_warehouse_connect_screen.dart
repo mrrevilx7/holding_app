@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:holding_app/src/ui/manager/about_holding_one_screen/about_holding_one_screen.dart';
 import '../../../../theme/app_theme.dart';
 import '../../../../utils/utils_screen.dart';
-import '../../../director/warehouser_manager/meters_screen/meters_screen.dart';
-import '../../../director/warehouser_manager/suddenly_screen/suddenly_screen.dart';
+import '../../../director/warehouser_abour_holdin_one/meters_screen/meters_screen.dart';
+import '../../../director/warehouser_abour_holdin_one/suddenly_screen/suddenly_screen.dart';
 
 class WareHouseManagerScreen extends StatefulWidget {
   const WareHouseManagerScreen({Key? key}) : super(key: key);

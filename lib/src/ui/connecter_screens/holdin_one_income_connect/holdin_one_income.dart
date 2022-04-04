@@ -5,14 +5,15 @@ import '../../director/holdin_one_income/holdin_one_month/holdin_one_month.dart'
 import '../../director/holdin_one_income/holdin_one_week/holdin_one_week.dart';
 import '../../director/holdin_one_income/holdin_one_year/holdin_one_year.dart';
 
-class WarehouseConnectScreen extends StatefulWidget {
-  const WarehouseConnectScreen({Key? key}) : super(key: key);
+class HoldinInComeConnectScreen extends StatefulWidget {
+  const HoldinInComeConnectScreen({Key? key}) : super(key: key);
 
   @override
-  State<WarehouseConnectScreen> createState() => _WarehouseConnectScreenState();
+  State<HoldinInComeConnectScreen> createState() =>
+      _HoldinInComeConnectScreenState();
 }
 
-class _WarehouseConnectScreenState extends State<WarehouseConnectScreen>
+class _HoldinInComeConnectScreenState extends State<HoldinInComeConnectScreen>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
   TextEditingController Statecontroller = TextEditingController();
@@ -31,13 +32,13 @@ class _WarehouseConnectScreenState extends State<WarehouseConnectScreen>
       backgroundColor: AppTheme.white,
       body: Column(
         children: [
-          SizedBox(height: 40 * h),
+          SizedBox(height: 68 * h),
           Row(
             children: [
               SizedBox(width: 16 * w),
               const Expanded(
                 child: Text(
-                  "Omborchi",
+                  "Do’kon 1",
                   style: TextStyle(
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w700,
@@ -67,7 +68,36 @@ class _WarehouseConnectScreenState extends State<WarehouseConnectScreen>
           ),
           Container(
             margin: EdgeInsets.only(
-              top: 16 * h,
+              top: 24 * h,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Jami daromat :",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    color: AppTheme.black.withOpacity(0.5),
+                  ),
+                ),
+                Text(
+                  "\$ 16.000",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 42,
+                    color: AppTheme.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(
+              top: 18 * h,
               left: 16 * w,
               right: 16 * w,
             ),
