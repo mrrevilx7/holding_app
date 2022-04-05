@@ -8,7 +8,7 @@ import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dar
 import '../../../dialog/dialog.dart';
 import '../../../repository/repository.dart';
 import '../../../utils/utils_screen.dart';
-import '../../connecter_screens/connecter_screens.dart';
+import '../../connecter_screens/connecter_screens_saller.dart';
 import '../../connecter_screens/director_contnnect_screen_admin_about_work/director_contnnect_screen_admin_about_work.dart';
 import '../../connecter_screens/manager_connect_screen/manager_connect_screen_about_cost.dart';
 import '../../delivery/delivery.dart';

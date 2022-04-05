@@ -137,28 +137,33 @@ class CenterDialog {
                             ],
                           ),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(
-                            right: 16 * w,
-                            top: 16 * h,
-                          ),
-                          width: 82 * w,
-                          height: 56 * h,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              bottomRight: Radius.circular(16),
-                              topRight: Radius.circular(16),
+                        GestureDetector(
+                          onTap: () {
+
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(
+                              right: 16 * w,
+                              top: 16 * h,
                             ),
-                            color: AppTheme.black,
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Files",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w400,
-                                color: AppTheme.white,
+                            width: 82 * w,
+                            height: 56 * h,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(16),
+                                topRight: Radius.circular(16),
+                              ),
+                              color: AppTheme.black,
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "Files",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w400,
+                                  color: AppTheme.white,
+                                ),
                               ),
                             ),
                           ),

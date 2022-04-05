@@ -2,13 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:holding_app/main.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 import '../../../dialog/sallaer_screen_add_salon/sallaer_screen_add_salon.dart';
 import '../../../dialog/saller_screen_sale_center_dialog/saller_screen_sale_center_dialog.dart';
 import '../../../utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-  class SallerScreenSale extends StatefulWidget {
+class SallerScreenSale extends StatefulWidget {
   const SallerScreenSale({Key? key}) : super(key: key);
 
   @override
@@ -173,8 +174,8 @@ class _SallerSCState extends State<SallerScreenSale> {
                   top: 18 * w,
                   right: 16 * w,
                 ),
-                child: const Text(
-                  " \$ 10000",
+                child: Text(
+                  " \$ " + priceFormat.format(10000),
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
@@ -314,7 +315,7 @@ class _SallerSCState extends State<SallerScreenSale> {
                   CenterAddSalonDialog.showFivetyDialog(context, " ");
                 },
                 child: Container(
-                  margin:  EdgeInsets.only(
+                  margin: EdgeInsets.only(
                     right: 36 * w,
                   ),
                   width: 24 * w,

@@ -123,7 +123,19 @@ class _HoldinOneShopState extends State<HoldinOneShop> {
                             ),
                           ],
                         ),
-
+                        Spacer(),
+                         Text(
+                          "\$800",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w400,
+                            color: AppTheme.black.withOpacity(0.5),
+                          ),
+                        ),
+                        SizedBox(width: 16 * w),
                       ],
                     ),
                   );
