@@ -6,14 +6,14 @@ import '../../../dialog/manager_center_dialog/manager_center_dialog.dart';
 import '../../../utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ProchiScreen extends StatefulWidget {
-  const ProchiScreen({Key? key}) : super(key: key);
+class ProchiManagerScreen extends StatefulWidget {
+  const ProchiManagerScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProchiScreen> createState() => _ProchiScreenState();
+  State<ProchiManagerScreen> createState() => _ProchiManagerScreenState();
 }
 
-class _ProchiScreenState extends State<ProchiScreen> {
+class _ProchiManagerScreenState extends State<ProchiManagerScreen> {
   final TextEditingController _kelinPriceCon = TextEditingController();
   TextEditingController _sonCon = TextEditingController();
   TextEditingController _productPriceCon = TextEditingController();

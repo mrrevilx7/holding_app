@@ -6,14 +6,14 @@ import '../../../dialog/manager_center_dialog/manager_center_dialog.dart';
 import '../../../utils/utils_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SerioScreen extends StatefulWidget {
-  const SerioScreen({Key? key}) : super(key: key);
+class SerioManagerScreen extends StatefulWidget {
+  const SerioManagerScreen({Key? key}) : super(key: key);
 
   @override
-  State<SerioScreen> createState() => _SrieoScreenState();
+  State<SerioManagerScreen> createState() => _SrieoScreenState();
 }
 
-class _SrieoScreenState extends State<SerioScreen> {
+class _SrieoScreenState extends State<SerioManagerScreen> {
   final TextEditingController _kelinPriceCon = TextEditingController();
   TextEditingController _sonCon = TextEditingController();
   TextEditingController _productPriceCon = TextEditingController();

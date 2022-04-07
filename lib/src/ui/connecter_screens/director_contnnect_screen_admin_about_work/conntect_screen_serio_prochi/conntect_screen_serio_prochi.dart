@@ -1,23 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:holding_app/src/ui/director/cost_proche/cost_proche.dart';
+import 'package:holding_app/src/ui/director/cost_serio/cost_serio.dart';
 import 'package:holding_app/src/ui/manager/about_holding_one_screen/about_holding_one_screen.dart';
-import '../../../theme/app_theme.dart';
-import '../../../utils/utils_screen.dart';
-import '../../manager/prochi_screen/prochi_screen.dart';
-import '../../manager/serio_screen/serio_screen.dart';
 
-class ConnectManagerScreen extends StatefulWidget {
-  const ConnectManagerScreen({Key? key}) : super(key: key);
+import '../../../../theme/app_theme.dart';
+import '../../../../utils/utils_screen.dart';
+
+class DirectorSerioProchiScreen extends StatefulWidget {
+  const DirectorSerioProchiScreen({Key? key}) : super(key: key);
 
   @override
-  State<ConnectManagerScreen> createState() => _ConnectManagerScreenState();
+  State<DirectorSerioProchiScreen> createState() =>
+      _DirectorSerioProchiScreenState();
 }
 
-class _ConnectManagerScreenState extends State<ConnectManagerScreen>
+class _DirectorSerioProchiScreenState extends State<DirectorSerioProchiScreen>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
   TextEditingController Statecontroller = TextEditingController();
-  bool _isSelected = false;
 
   @override
   void initState() {
@@ -35,9 +36,20 @@ class _ConnectManagerScreenState extends State<ConnectManagerScreen>
         children: [
           SizedBox(height: 68 * h),
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              SizedBox(width: 16 * w),
+              const Text(
+                "Asosiy sahifa",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.bold,
+                  color: AppTheme.black,
+                ),
+              ),
+              Spacer(),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -74,7 +86,7 @@ class _ConnectManagerScreenState extends State<ConnectManagerScreen>
           ),
           Container(
             margin: EdgeInsets.only(
-              top: 16 * h,
+              top: 24 * h,
               left: 16 * w,
               right: 16 * w,
             ),
@@ -89,13 +101,13 @@ class _ConnectManagerScreenState extends State<ConnectManagerScreen>
               labelColor: AppTheme.black,
               unselectedLabelColor: AppTheme.white,
               labelStyle: const TextStyle(
-                fontSize: 12,
+                fontSize: 16,
                 fontWeight: FontWeight.w700,
                 fontFamily: 'Poppins',
                 color: AppTheme.black,
               ),
               unselectedLabelStyle: const TextStyle(
-                fontSize: 12,
+                fontSize: 16,
                 fontWeight: FontWeight.w700,
                 fontFamily: 'Poppins',
               ),
@@ -110,7 +122,7 @@ class _ConnectManagerScreenState extends State<ConnectManagerScreen>
                   text: "SERIO",
                 ),
                 Tab(
-                  text: "Prochi",
+                  text: "PROCHI",
                 ),
               ],
             ),
@@ -119,8 +131,8 @@ class _ConnectManagerScreenState extends State<ConnectManagerScreen>
             child: TabBarView(
               controller: _controller,
               children: const [
-                SerioManagerScreen(),
-                ProchiManagerScreen(),
+                SerioDirectorScreen(),
+                ProchiDirectorScreen(),
               ],
             ),
           ),

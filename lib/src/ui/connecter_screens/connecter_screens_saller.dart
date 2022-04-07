@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../theme/app_theme.dart';
 import '../../utils/utils_screen.dart';
-import '../seller/ saller_screen_sale/seller_screen_sale.dart';
 import '../seller/saller_screen_50_50/saller_screen_50_50.dart';
+import '../seller/saller_screen_sale/seller_screen_sale.dart';
 import '../seller/seller_screen/seller_screen_buy.dart';
 
 class ConnectScreen extends StatefulWidget {
