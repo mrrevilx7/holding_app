@@ -154,7 +154,7 @@ class _SerioDirectorScreenState extends State<SerioDirectorScreen> {
                   ),
                 ),
                 Spacer(),
-                Text(
+                const Text(
                   "\$ 10.000",
                   style: TextStyle(
                     fontFamily: 'Poppins',
