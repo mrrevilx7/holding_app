@@ -7,6 +7,7 @@ import 'package:holding_app/src/ui/connecter_screens/director_contnnect_screen_a
 import 'package:holding_app/src/ui/connecter_screens/holdin_one_income_connect/holdin_one_income.dart';
 import 'package:holding_app/src/ui/connecter_screens/manager_connect_screen/manager_connect_screen_about_cost.dart';
 import 'package:holding_app/src/ui/connecter_screens/warehouse/warehouse_connect_screen.dart';
+import 'package:holding_app/src/ui/customer/profile_view/profile_view_screen.dart';
 import 'package:holding_app/src/ui/delivery/delivery.dart';
 import 'package:holding_app/src/ui/director/about_holdings/about_holding_one/about_holding_one.dart';
 import 'package:holding_app/src/ui/director/delivery_statika/delivery%20statatika.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: DirectorSerioProchiScreen(),
+      home: const ProfileScreen(),
       //ConnectManagerScreen(),
       //HoldingScreen(),
       //OnboardingOneScreen(),

@@ -2,13 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:holding_app/src/bloc/Profille_bloc/Profile_bloc.dart';
-import 'package:holding_app/src/model/api_models/Profile_api.dart';
 import 'package:holding_app/src/model/information_model/information_model.dart';
 import 'package:holding_app/src/theme/app_theme.dart';
 import 'package:holding_app/src/ui/customer/news_screen/news_screen.dart';
-import 'package:holding_app/src/widgets/grid_widget/grid_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../utils/utils_screen.dart';
+import '../dress_load_screen/dress_load_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -112,18 +112,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime dateTime = DateTime.now();
     double w = Utils.getWidth(context);
     double h = Utils.getHeight(context);
     return Scaffold(
       backgroundColor: AppTheme.white,
       body:
-          // StreamBuilder(
+          //StreamBuilder(
           //   stream: profileBloc.getCustomers,
           //   builder: (BuildContext context, AsyncSnapshot<ProfileModel> snapshot) {
           //     if (snapshot.hasData) {
           //       List<ProfileResult> porfile = snapshot.data!.results;
-          //
-          //       return
           ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -310,97 +309,147 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                margin: EdgeInsets.only(
-                  left: 24 * w,
-                ),
-                width: 162 * w,
-                height: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: AppTheme.levender,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(height: 18 * h),
-                    const Text(
-                      "Ko’ylak soni",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 18,
-                        color: AppTheme.magentaDark,
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(
+                    left: 16 * w,
+                  ),
+                  width: double.infinity,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: AppTheme.levender,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 8 * h),
+                      const Text(
+                        "Ko’ylak soni",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                          color: AppTheme.magentaDark,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 18 * h),
-                    const Text(
-                      "3",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: AppTheme.magentaDark,
+                      SizedBox(height: 6 * h),
+                      const Text(
+                        "3",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: AppTheme.magentaDark,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 18 * h),
-                    const Text(
-                      "dona",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: AppTheme.magentaDark,
+                      SizedBox(height: 6 * h),
+                      const Text(
+                        "dona",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: AppTheme.magentaDark,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-              const Spacer(),
-              Container(
-                margin: EdgeInsets.only(
-                  right: 24 * w,
+              SizedBox(width: 12 * w),
+              Expanded(
+                child: Container(
+                  width: double.infinity,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: AppTheme.levenderRed,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 8 * h),
+                      const Text(
+                        "Xarajatlar",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                          color: AppTheme.lightRed,
+                        ),
+                      ),
+                      SizedBox(height: 6 * h),
+                      const Text(
+                        "164",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: AppTheme.lightRed,
+                        ),
+                      ),
+                      SizedBox(height: 6 * h),
+                      const Text(
+                        "\$",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: AppTheme.lightRed,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                width: 162 * w,
-                height: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: AppTheme.levenderRed,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(height: 18 * h),
-                    const Text(
-                      "Xarajatlar",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 18,
-                        color: AppTheme.lightRed,
+              ),
+              SizedBox(width: 12 * w),
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(
+                    right: 16 * w,
+                  ),
+                  width: double.infinity,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: AppTheme.levenderRed,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: 8 * h),
+                      const Text(
+                        "Qarz",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                          color: AppTheme.lightRed,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 18 * h),
-                    const Text(
-                      "164",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: AppTheme.lightRed,
+                      SizedBox(height: 6 * h),
+                      const Text(
+                        "164",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: AppTheme.lightRed,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 18 * h),
-                    const Text(
-                      "\$",
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: AppTheme.lightRed,
+                      SizedBox(height: 6 * h),
+                      const Text(
+                        "\$",
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: AppTheme.lightRed,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -411,7 +460,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               SizedBox(width: 16 * w),
               const Text(
-                "Maxsulotlar haqida:",
+                "Oddiy sotuvlar",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w400,
@@ -421,193 +470,159 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
+          SizedBox(height: 16 * h),
           Container(
-            margin: EdgeInsets.only(
-              top: 16 * h,
-            ),
-            height: 312,
-            child: PageView.builder(
-              controller: _profileCon,
-              itemCount: (data.length + _inforCount - 1) ~/ _inforCount,
-              scrollDirection: Axis.horizontal,
-              onPageChanged: (_index) {
-                setState(() {
-                  _selectedIndex = _index;
-                });
-              },
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    Row(
+            height: 130 * h,
+            child: ListView.builder(
+              itemCount: data.length,
+              itemBuilder: (_, i) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const DressLoadScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 140,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: AppTheme.levender,
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(width: 24),
-                        Expanded(
-                          child: InforGridWidget(
-                            onTap: () {},
-                            data: data[index * _inforCount],
+                        SizedBox(width: 12),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 12),
+                            Text(
+                              data[i].deressName,
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: 'Poppins',
+                                color: AppTheme.magenta,
+                                letterSpacing: 0.2,
+                              ),
+                            ),
+                            SizedBox(height: 12),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/person1.svg",
+                                  width: 15,
+                                  height: 15,
+                                ),
+                                SizedBox(width: 4),
+                                Text(
+                                  data[i].name,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: 'Poppins',
+                                    color: AppTheme.magenta,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 8),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/calendar_castumer.svg",
+                                  width: 15,
+                                  height: 15,
+                                ),
+                                SizedBox(width: 4),
+                                Text(
+                                  dateTime.day.toString() +
+                                      "." +
+                                      dateTime.month.toString() +
+                                      "." +
+                                      dateTime.year.toString(),
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: 'Roboto',
+                                    color: AppTheme.magenta.withOpacity(0.7),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 6),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  "assets/icons/vector_price.svg",
+                                  width: 15,
+                                  height: 15,
+                                ),
+                                SizedBox(width: 4),
+                                Text(
+                                  data[i].price.toDouble().toString() + " ",
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: 'Poppins',
+                                    color: AppTheme.magenta.withOpacity(0.7),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 16),
+                          ],
+                        ),
+                        Spacer(),
+                        Container(
+                          width: 56 * w,
+                          height: 56 * w,
+                          margin: const EdgeInsets.only(
+                            right: 4,
+                            top: 4,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(56),
+                            color: Colors.transparent,
+                          ),
+                          child: Image.asset(
+                            data[i].image,
                           ),
                         ),
-                        const SizedBox(width: 18),
-                        Expanded(
-                          child: index * _inforCount + 1 >= data.length
-                              ? Container()
-                              : InforGridWidget(
-                                  onTap: () {},
-                                  data: data[index * _inforCount + 1],
-                                ),
-                        ),
-                        const SizedBox(width: 24),
                       ],
                     ),
-                    const SizedBox(height: 18),
-                    Row(
-                      children: [
-                        const SizedBox(width: 24),
-                        Expanded(
-                          child: index * _inforCount + 2 >= data.length
-                              ? Container()
-                              : InforGridWidget(
-                                  onTap: () {},
-                                  data: data[index * _inforCount + 2],
-                                ),
-                        ),
-                        const SizedBox(width: 18),
-                        Expanded(
-                          child: index * _inforCount + 3 >= data.length
-                              ? Container()
-                              : InforGridWidget(
-                                  onTap: () {},
-                                  data: data[index * _inforCount + 3],
-                                ),
-                        ),
-                        const SizedBox(width: 24),
-                      ],
-                    ),
-                  ],
+                  ),
                 );
               },
             ),
           ),
-          Container(
-            height: 40,
-            margin: EdgeInsets.only(bottom: Platform.isIOS ? 32 : 24),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.arrow_back_ios,
-                  size: 18,
-                  color: AppTheme.neturalBlue,
+          SizedBox(height: 24 * h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(width: 16 * w),
+              const Text(
+                "50 ga 50 sotuvlar",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Roboto',
+                  color: AppTheme.magenta,
                 ),
-                const SizedBox(width: 6),
-                AnimatedContainer(
-                  duration: const Duration(milliseconds: 270),
-                  height: _selectedIndex == 0 ? 20 : 18,
-                  width: _selectedIndex == 0 ? 20 : 18,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(_selectedIndex == 0 ? 20 : 18),
-                    color: _selectedIndex == 0
-                        ? AppTheme.neturalBlue
-                        : AppTheme.gray,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "1",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: _selectedIndex == 0
-                            ? AppTheme.white
-                            : AppTheme.white,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 6),
-                AnimatedContainer(
-                  height: _selectedIndex == 1 ? 20 : 18,
-                  width: _selectedIndex == 1 ? 20 : 18,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(_selectedIndex == 1 ? 20 : 18),
-                    color: _selectedIndex == 1
-                        ? AppTheme.neturalBlue
-                        : AppTheme.gray,
-                  ),
-                  duration: const Duration(milliseconds: 270),
-                  child: Center(
-                    child: Text(
-                      "2",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: _selectedIndex == 1
-                            ? AppTheme.white
-                            : AppTheme.white,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 6),
-                AnimatedContainer(
-                  height: _selectedIndex == 2 ? 20 : 18,
-                  width: _selectedIndex == 2 ? 20 : 18,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(_selectedIndex == 2 ? 20 : 18),
-                    color: _selectedIndex == 2
-                        ? AppTheme.neturalBlue
-                        : AppTheme.gray,
-                  ),
-                  duration: const Duration(milliseconds: 270),
-                  child: Center(
-                    child: Text(
-                      "3",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: _selectedIndex == 2
-                            ? AppTheme.white
-                            : AppTheme.white,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 6),
-                AnimatedContainer(
-                  height: _selectedIndex == 3 ? 20 : 18,
-                  width: _selectedIndex == 3 ? 20 : 18,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(_selectedIndex == 3 ? 20 : 18),
-                    color: _selectedIndex == 3
-                        ? AppTheme.neturalBlue
-                        : AppTheme.gray,
-                  ),
-                  duration: const Duration(milliseconds: 270),
-                  child: Center(
-                    child: Text(
-                      "4",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: _selectedIndex == 3
-                            ? AppTheme.white
-                            : AppTheme.white,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 6),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 18,
-                  color: AppTheme.neturalBlue,
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
